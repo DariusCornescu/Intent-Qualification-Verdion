@@ -10,6 +10,12 @@ A multi-stage NLP pipeline that takes natural language queries about companies a
 
 The system decomposes each query into structured filters and semantic signals, then progressively narrows results — from fast deterministic checks to LLM-powered reasoning — using only the depth each query actually needs.
 
+<table>
+    <tr>
+        <td><img src="image-2.png" width="400"/></td>
+        <td><img src="image-3.png" width="400"/></td>
+    </tr>
+</table>
 ---
 
 ## Architecture
