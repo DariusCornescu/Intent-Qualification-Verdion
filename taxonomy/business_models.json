@@ -1,0 +1,198 @@
+{
+  "business_models": {
+    "b2b": [
+      "business to business",
+      "B2B",
+      "enterprise solutions",
+      "corporate clients",
+      "B2B services"
+    ],
+    "b2c": [
+      "business to consumer",
+      "B2C",
+      "direct to consumer",
+      "retail",
+      "consumer products"
+    ],
+    "b2b2c": [
+      "business to business to consumer",
+      "B2B2C",
+      "B2B2C model",
+      "intermediary services"
+    ],
+    "b2g": [
+      "business to government",
+      "B2G",
+      "government contracts",
+      "public sector services"
+    ],
+    "d2c": [
+      "direct to consumer",
+      "D2C",
+      "consumer direct",
+      "online retail"
+    ],
+    "saas": [
+      "software as a service",
+      "SaaS",
+      "cloud software",
+      "subscription software"
+    ],
+    "paas": [
+      "platform as a service",
+      "PaaS",
+      "cloud platform",
+      "development platform"
+    ],
+    "iaas": [
+      "infrastructure as a service",
+      "IaaS",
+      "cloud infrastructure",
+      "virtual servers"
+    ],
+    "marketplace": [
+      "online marketplace",
+      "marketplace model",
+      "e-commerce platform",
+      "multi-vendor"
+    ],
+    "platform": [
+      "platform model",
+      "technology platform",
+      "service platform",
+      "integrated platform"
+    ],
+    "subscription": [
+      "subscription model",
+      "recurring revenue",
+      "monthly subscription",
+      "annual subscription"
+    ],
+    "freemium": [
+      "freemium model",
+      "free tier",
+      "premium features",
+      "basic access"
+    ],
+    "open_source": [
+      "open source software",
+      "community-driven",
+      "collaborative development",
+      "free software"
+    ],
+    "licensing": [
+      "licensing model",
+      "intellectual property licensing",
+      "royalty agreements",
+      "software licensing"
+    ],
+    "franchise": [
+      "franchise model",
+      "franchising",
+      "franchise agreement",
+      "franchisee"
+    ],
+    "agency": [
+      "agency model",
+      "marketing agency",
+      "creative agency",
+      "consulting agency"
+    ],
+    "consulting": [
+      "consulting services",
+      "consulting firm",
+      "advisory services",
+      "management consulting"
+    ],
+    "service_provider": [
+      "service provider",
+      "managed services",
+      "outsourcing",
+      "third-party services"
+    ],
+    "manufacturer": [
+      "manufacturer",
+      "production",
+      "manufacturing services",
+      "OEM"
+    ],
+    "distributor": [
+      "distributor",
+      "distribution network",
+      "wholesale distribution",
+      "supply chain"
+    ],
+    "wholesaler": [
+      "wholesaler",
+      "bulk sales",
+      "wholesale model",
+      "resale"
+    ],
+    "retailer": [
+      "retailer",
+      "retail model",
+      "brick and mortar",
+      "online retail"
+    ],
+    "reseller": [
+      "reseller",
+      "value-added reseller",
+      "resale",
+      "channel partner"
+    ],
+    "oem": [
+      "original equipment manufacturer",
+      "OEM",
+      "private label",
+      "manufacturing partner"
+    ],
+    "odm": [
+      "original design manufacturer",
+      "ODM",
+      "design and manufacturing",
+      "custom products"
+    ],
+    "white_label": [
+      "white label",
+      "private label",
+      "rebranding",
+      "custom branding"
+    ],
+    "aggregator": [
+      "aggregator model",
+      "data aggregator",
+      "service aggregator",
+      "content aggregator"
+    ],
+    "broker": [
+      "brokerage",
+      "broker model",
+      "intermediary",
+      "transaction facilitator"
+    ],
+    "managed_services": [
+      "managed services",
+      "IT managed services",
+      "outsourced services",
+      "service management"
+    ],
+    "on_demand": [
+      "on-demand services",
+      "just-in-time",
+      "instant access",
+      "flexible services"
+    ],
+    "peer_to_peer": [
+      "peer to peer",
+      "P2P",
+      "collaborative consumption",
+      "decentralized network"
+    ],
+    "cooperative": [
+      "cooperative model",
+      "co-op",
+      "member-owned",
+      "shared ownership"
+    ]
+  }
+}

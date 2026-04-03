@@ -1,0 +1,2402 @@
+{
+  "countries": {
+    "albania": {
+      "aliases": [
+        "al",
+        "alb",
+        "shqipëri",
+        "albanian"
+      ],
+      "continent": "europe"
+    },
+    "andorra": {
+      "aliases": [
+        "ad",
+        "and",
+        "andorra la vella",
+        "andorran"
+      ],
+      "continent": "europe"
+    },
+    "armenia": {
+      "aliases": [
+        "am",
+        "arm",
+        "Հայաստան",
+        "armenian"
+      ],
+      "continent": "asia"
+    },
+    "austria": {
+      "aliases": [
+        "at",
+        "aut",
+        "österreich",
+        "austrian"
+      ],
+      "continent": "europe"
+    },
+    "azerbaijan": {
+      "aliases": [
+        "az",
+        "aze",
+        "Azərbaycan",
+        "azerbaijani"
+      ],
+      "continent": "asia"
+    },
+    "belarus": {
+      "aliases": [
+        "by",
+        "blr",
+        "беларусь",
+        "belarusian"
+      ],
+      "continent": "europe"
+    },
+    "belgium": {
+      "aliases": [
+        "be",
+        "bel",
+        "belgië",
+        "belgian"
+      ],
+      "continent": "europe"
+    },
+    "bosnia and herzegovina": {
+      "aliases": [
+        "ba",
+        "bih",
+        "босна и херцеговина",
+        "bosnian"
+      ],
+      "continent": "europe"
+    },
+    "bulgaria": {
+      "aliases": [
+        "bg",
+        "bgr",
+        "българия",
+        "bulgarian"
+      ],
+      "continent": "europe"
+    },
+    "croatia": {
+      "aliases": [
+        "hr",
+        "hrv",
+        "hrvatska",
+        "croatian"
+      ],
+      "continent": "europe"
+    },
+    "cyprus": {
+      "aliases": [
+        "cy",
+        "cyp",
+        "Κύπρος",
+        "cypriot"
+      ],
+      "continent": "asia"
+    },
+    "czech republic": {
+      "aliases": [
+        "cz",
+        "cze",
+        "česká republika",
+        "czech"
+      ],
+      "continent": "europe"
+    },
+    "denmark": {
+      "aliases": [
+        "dk",
+        "dnk",
+        "danmark",
+        "danish"
+      ],
+      "continent": "europe"
+    },
+    "estonia": {
+      "aliases": [
+        "ee",
+        "est",
+        "eesti",
+        "estonian"
+      ],
+      "continent": "europe"
+    },
+    "finland": {
+      "aliases": [
+        "fi",
+        "fin",
+        "suomi",
+        "finnish"
+      ],
+      "continent": "europe"
+    },
+    "france": {
+      "aliases": [
+        "fr",
+        "fra",
+        "france",
+        "french"
+      ],
+      "continent": "europe"
+    },
+    "georgia": {
+      "aliases": [
+        "ge",
+        "geo",
+        "საქართველო",
+        "georgian"
+      ],
+      "continent": "asia"
+    },
+    "germany": {
+      "aliases": [
+        "de",
+        "deu",
+        "deutschland",
+        "german",
+        "bundesrepublik"
+      ],
+      "continent": "europe"
+    },
+    "greece": {
+      "aliases": [
+        "gr",
+        "grc",
+        "ελλάδα",
+        "greek"
+      ],
+      "continent": "europe"
+    },
+    "hungary": {
+      "aliases": [
+        "hu",
+        "hun",
+        "magyarország",
+        "hungarian"
+      ],
+      "continent": "europe"
+    },
+    "iceland": {
+      "aliases": [
+        "is",
+        "isl",
+        "ísland",
+        "icelandic"
+      ],
+      "continent": "europe"
+    },
+    "ireland": {
+      "aliases": [
+        "ie",
+        "irl",
+        "éire",
+        "irish"
+      ],
+      "continent": "europe"
+    },
+    "italy": {
+      "aliases": [
+        "it",
+        "ita",
+        "italia",
+        "italian"
+      ],
+      "continent": "europe"
+    },
+    "latvia": {
+      "aliases": [
+        "lv",
+        "lva",
+        "latvija",
+        "latvian"
+      ],
+      "continent": "europe"
+    },
+    "liechtenstein": {
+      "aliases": [
+        "li",
+        "lie",
+        "liechtenstein",
+        "liechtensteiner"
+      ],
+      "continent": "europe"
+    },
+    "lithuania": {
+      "aliases": [
+        "lt",
+        "ltu",
+        "lietuva",
+        "lithuanian"
+      ],
+      "continent": "europe"
+    },
+    "luxembourg": {
+      "aliases": [
+        "lu",
+        "lux",
+        "luxembourg",
+        "luxembourger"
+      ],
+      "continent": "europe"
+    },
+    "malta": {
+      "aliases": [
+        "mt",
+        "mlt",
+        "malta",
+        "maltese"
+      ],
+      "continent": "europe"
+    },
+    "moldova": {
+      "aliases": [
+        "md",
+        "mda",
+        "moldova",
+        "moldovan"
+      ],
+      "continent": "europe"
+    },
+    "monaco": {
+      "aliases": [
+        "mc",
+        "mco",
+        "monaco",
+        "monacan"
+      ],
+      "continent": "europe"
+    },
+    "montenegro": {
+      "aliases": [
+        "me",
+        "mne",
+        "crna gora",
+        "montenegrin"
+      ],
+      "continent": "europe"
+    },
+    "netherlands": {
+      "aliases": [
+        "nl",
+        "nld",
+        "nederland",
+        "dutch"
+      ],
+      "continent": "europe"
+    },
+    "north macedonia": {
+      "aliases": [
+        "mk",
+        "mkd",
+        "македонија",
+        "macedonian"
+      ],
+      "continent": "europe"
+    },
+    "norway": {
+      "aliases": [
+        "no",
+        "nor",
+        "norge",
+        "norwegian"
+      ],
+      "continent": "europe"
+    },
+    "poland": {
+      "aliases": [
+        "pl",
+        "pol",
+        "polska",
+        "polish"
+      ],
+      "continent": "europe"
+    },
+    "portugal": {
+      "aliases": [
+        "pt",
+        "prt",
+        "portugal",
+        "portuguese"
+      ],
+      "continent": "europe"
+    },
+    "romania": {
+      "aliases": [
+        "ro",
+        "rou",
+        "românia",
+        "romanian"
+      ],
+      "continent": "europe"
+    },
+    "russia": {
+      "aliases": [
+        "ru",
+        "rus",
+        "россия",
+        "russian"
+      ],
+      "continent": "europe"
+    },
+    "san marino": {
+      "aliases": [
+        "sm",
+        "smr",
+        "san marino",
+        "sammarinese"
+      ],
+      "continent": "europe"
+    },
+    "serbia": {
+      "aliases": [
+        "rs",
+        "srb",
+        "србија",
+        "serbian"
+      ],
+      "continent": "europe"
+    },
+    "slovakia": {
+      "aliases": [
+        "sk",
+        "svk",
+        "slovensko",
+        "slovak"
+      ],
+      "continent": "europe"
+    },
+    "slovenia": {
+      "aliases": [
+        "si",
+        "svn",
+        "slovenija",
+        "slovenian"
+      ],
+      "continent": "europe"
+    },
+    "spain": {
+      "aliases": [
+        "es",
+        "esp",
+        "españa",
+        "spanish"
+      ],
+      "continent": "europe"
+    },
+    "sweden": {
+      "aliases": [
+        "se",
+        "swe",
+        "sverige",
+        "swedish"
+      ],
+      "continent": "europe"
+    },
+    "switzerland": {
+      "aliases": [
+        "ch",
+        "che",
+        "schweiz",
+        "swiss"
+      ],
+      "continent": "europe"
+    },
+    "ukraine": {
+      "aliases": [
+        "ua",
+        "ukr",
+        "україна",
+        "ukrainian"
+      ],
+      "continent": "europe"
+    },
+    "united kingdom": {
+      "aliases": [
+        "gb",
+        "gbr",
+        "united kingdom",
+        "british"
+      ],
+      "continent": "europe"
+    },
+    "united states": {
+      "aliases": [
+        "us",
+        "usa",
+        "america",
+        "american",
+        "the states",
+        "the united states",
+        "united states"
+      ],
+      "continent": "north_america"
+    },
+    "vatican city": {
+      "aliases": [
+        "va",
+        "vat",
+        "città del vaticano",
+        "vatican"
+      ],
+      "continent": "europe"
+    },
+    "afghanistan": {
+      "aliases": [
+        "af",
+        "afg",
+        "افغانستان",
+        "afghan",
+        "afghanistani"
+      ],
+      "continent": "asia"
+    },
+    "bahrain": {
+      "aliases": [
+        "bh",
+        "bhr",
+        "البحرين",
+        "bahraini"
+      ],
+      "continent": "asia"
+    },
+    "bangladesh": {
+      "aliases": [
+        "bd",
+        "bgd",
+        "বাংলাদেশ",
+        "bangladeshi"
+      ],
+      "continent": "asia"
+    },
+    "bhutan": {
+      "aliases": [
+        "bt",
+        "btn",
+        "འབྲུག",
+        "bhutanese"
+      ],
+      "continent": "asia"
+    },
+    "brunei": {
+      "aliases": [
+        "bn",
+        "brn",
+        "بروناي",
+        "bruneian"
+      ],
+      "continent": "asia"
+    },
+    "cambodia": {
+      "aliases": [
+        "kh",
+        "khm",
+        "កម្ពុជា",
+        "cambodian"
+      ],
+      "continent": "asia"
+    },
+    "china": {
+      "aliases": [
+        "cn",
+        "chn",
+        "中国",
+        "chinese"
+      ],
+      "continent": "asia"
+    },
+    "india": {
+      "aliases": [
+        "in",
+        "ind",
+        "भारत",
+        "indian"
+      ],
+      "continent": "asia"
+    },
+    "indonesia": {
+      "aliases": [
+        "id",
+        "idn",
+        "Indonesia",
+        "indonesian"
+      ],
+      "continent": "asia"
+    },
+    "iran": {
+      "aliases": [
+        "ir",
+        "irn",
+        "ایران",
+        "iranian"
+      ],
+      "continent": "asia"
+    },
+    "iraq": {
+      "aliases": [
+        "iq",
+        "irq",
+        "العراق",
+        "iraqi"
+      ],
+      "continent": "asia"
+    },
+    "israel": {
+      "aliases": [
+        "il",
+        "isr",
+        "ישראל",
+        "israeli"
+      ],
+      "continent": "asia"
+    },
+    "japan": {
+      "aliases": [
+        "jp",
+        "jpn",
+        "日本",
+        "japanese"
+      ],
+      "continent": "asia"
+    },
+    "jordan": {
+      "aliases": [
+        "jo",
+        "jor",
+        "الأردن",
+        "jordanian"
+      ],
+      "continent": "asia"
+    },
+    "kazakhstan": {
+      "aliases": [
+        "kz",
+        "kaz",
+        "Қазақстан",
+        "kazakh"
+      ],
+      "continent": "asia"
+    },
+    "korea, north": {
+      "aliases": [
+        "kp",
+        "prk",
+        "조선민주주의인민공화국",
+        "north korean"
+      ],
+      "continent": "asia"
+    },
+    "korea, south": {
+      "aliases": [
+        "kr",
+        "kor",
+        "대한민국",
+        "south korean"
+      ],
+      "continent": "asia"
+    },
+    "kuwait": {
+      "aliases": [
+        "kw",
+        "kwt",
+        "الكويت",
+        "kuwaiti"
+      ],
+      "continent": "asia"
+    },
+    "kyrgyzstan": {
+      "aliases": [
+        "kg",
+        "kgz",
+        "Кыргызстан",
+        "kyrgyz"
+      ],
+      "continent": "asia"
+    },
+    "laos": {
+      "aliases": [
+        "la",
+        "lao",
+        "ສປປລາວ",
+        "lao"
+      ],
+      "continent": "asia"
+    },
+    "lebanon": {
+      "aliases": [
+        "lb",
+        "lbn",
+        "لبنان",
+        "lebanese"
+      ],
+      "continent": "asia"
+    },
+    "malaysia": {
+      "aliases": [
+        "my",
+        "mys",
+        "Malaysia",
+        "malaysian"
+      ],
+      "continent": "asia"
+    },
+    "maldives": {
+      "aliases": [
+        "mv",
+        "mdv",
+        "Maldives",
+        "maldivian"
+      ],
+      "continent": "asia"
+    },
+    "mongolia": {
+      "aliases": [
+        "mn",
+        "mng",
+        "Монгол",
+        "mongolian"
+      ],
+      "continent": "asia"
+    },
+    "myanmar": {
+      "aliases": [
+        "mm",
+        "mmr",
+        "မြန်မာ",
+        "myanmarese"
+      ],
+      "continent": "asia"
+    },
+    "nepal": {
+      "aliases": [
+        "np",
+        "npl",
+        "नेपाल",
+        "nepali"
+      ],
+      "continent": "asia"
+    },
+    "oman": {
+      "aliases": [
+        "om",
+        "omn",
+        "عمان",
+        "omani"
+      ],
+      "continent": "asia"
+    },
+    "pakistan": {
+      "aliases": [
+        "pk",
+        "pak",
+        "پاکستان",
+        "pakistani"
+      ],
+      "continent": "asia"
+    },
+    "palestine": {
+      "aliases": [
+        "ps",
+        "pse",
+        "فلسطين",
+        "palestinian"
+      ],
+      "continent": "asia"
+    },
+    "philippines": {
+      "aliases": [
+        "ph",
+        "phl",
+        "Pilipinas",
+        "filipino"
+      ],
+      "continent": "asia"
+    },
+    "qatar": {
+      "aliases": [
+        "qa",
+        "qat",
+        "قطر",
+        "qatari"
+      ],
+      "continent": "asia"
+    },
+    "saudi arabia": {
+      "aliases": [
+        "sa",
+        "sau",
+        "المملكة العربية السعودية",
+        "saudi"
+      ],
+      "continent": "asia"
+    },
+    "singapore": {
+      "aliases": [
+        "sg",
+        "sgp",
+        "新加坡",
+        "singaporean"
+      ],
+      "continent": "asia"
+    },
+    "sri lanka": {
+      "aliases": [
+        "lk",
+        "lka",
+        "ශ්‍රී ලංකාව",
+        "sri lankan"
+      ],
+      "continent": "asia"
+    },
+    "syria": {
+      "aliases": [
+        "sy",
+        "syr",
+        "سوريا",
+        "syrian"
+      ],
+      "continent": "asia"
+    },
+    "taiwan": {
+      "aliases": [
+        "tw",
+        "twn",
+        "台灣",
+        "taiwanese"
+      ],
+      "continent": "asia"
+    },
+    "tajikistan": {
+      "aliases": [
+        "tj",
+        "tjk",
+        "Тоҷикистон",
+        "tajik"
+      ],
+      "continent": "asia"
+    },
+    "thailand": {
+      "aliases": [
+        "th",
+        "tha",
+        "ประเทศไทย",
+        "thai"
+      ],
+      "continent": "asia"
+    },
+    "turkmenistan": {
+      "aliases": [
+        "tm",
+        "tkm",
+        "Türkmenistan",
+        "turkmen"
+      ],
+      "continent": "asia"
+    },
+    "united arab emirates": {
+      "aliases": [
+        "ae",
+        "are",
+        "الإمارات العربية المتحدة",
+        "emirati"
+      ],
+      "continent": "asia"
+    },
+    "uzbekistan": {
+      "aliases": [
+        "uz",
+        "uzb",
+        "Oʻzbekiston",
+        "uzbek"
+      ],
+      "continent": "asia"
+    },
+    "vietnam": {
+      "aliases": [
+        "vn",
+        "vnm",
+        "Việt Nam",
+        "vietnamese"
+      ],
+      "continent": "asia"
+    },
+    "hong kong": {
+      "aliases": [
+        "hk",
+        "HKG",
+        "香港",
+        "hongkonger"
+      ],
+      "continent": "asia"
+    },
+    "macau": {
+      "aliases": [
+        "mo",
+        "MAC",
+        "澳门",
+        "macanese"
+      ],
+      "continent": "asia"
+    },
+    "algeria": {
+      "aliases": [
+        "dz",
+        "dza",
+        "الجزائر",
+        "algerian"
+      ],
+      "continent": "africa"
+    },
+    "angola": {
+      "aliases": [
+        "ao",
+        "ago",
+        "angola",
+        "angolan"
+      ],
+      "continent": "africa"
+    },
+    "benin": {
+      "aliases": [
+        "bj",
+        "ben",
+        "bénin",
+        "beninese"
+      ],
+      "continent": "africa"
+    },
+    "botswana": {
+      "aliases": [
+        "bw",
+        "bwa",
+        "botswana",
+        "botswanan"
+      ],
+      "continent": "africa"
+    },
+    "burkina faso": {
+      "aliases": [
+        "bf",
+        "bfa",
+        "burkina faso",
+        "burkinabe"
+      ],
+      "continent": "africa"
+    },
+    "burundi": {
+      "aliases": [
+        "bi",
+        "bdi",
+        "burundi",
+        "burundian"
+      ],
+      "continent": "africa"
+    },
+    "cabo verde": {
+      "aliases": [
+        "cv",
+        "cpv",
+        "cabo verde",
+        "cape verdean"
+      ],
+      "continent": "africa"
+    },
+    "cameroun": {
+      "aliases": [
+        "cm",
+        "cmr",
+        "cameroun",
+        "cameroonian"
+      ],
+      "continent": "africa"
+    },
+    "central african republic": {
+      "aliases": [
+        "cf",
+        "caf",
+        "république centrafricaine",
+        "central african"
+      ],
+      "continent": "africa"
+    },
+    "chad": {
+      "aliases": [
+        "td",
+        "tcd",
+        "tchad",
+        "chadian"
+      ],
+      "continent": "africa"
+    },
+    "comoros": {
+      "aliases": [
+        "km",
+        "com",
+        "كومور",
+        "comorian"
+      ],
+      "continent": "africa"
+    },
+    "congo, democratic republic of the": {
+      "aliases": [
+        "cd",
+        "cod",
+        "république démocratique du Congo",
+        "congolese"
+      ],
+      "continent": "africa"
+    },
+    "congo, republic of the": {
+      "aliases": [
+        "cg",
+        "cog",
+        "république du Congo",
+        "congolese"
+      ],
+      "continent": "africa"
+    },
+    "djibouti": {
+      "aliases": [
+        "dj",
+        "dji",
+        "جيبوتي",
+        "djiboutian"
+      ],
+      "continent": "africa"
+    },
+    "egypt": {
+      "aliases": [
+        "eg",
+        "egy",
+        "مصر",
+        "egyptian"
+      ],
+      "continent": "africa"
+    },
+    "equatorial guinea": {
+      "aliases": [
+        "gq",
+        "gnq",
+        "guinea équatoriale",
+        "equatorial guinean"
+      ],
+      "continent": "africa"
+    },
+    "eritrea": {
+      "aliases": [
+        "er",
+        "eri",
+        "إريتريا",
+        "eritrean"
+      ],
+      "continent": "africa"
+    },
+    "eswatini": {
+      "aliases": [
+        "sz",
+        "swz",
+        "swaziland",
+        "swazi"
+      ],
+      "continent": "africa"
+    },
+    "ethiopia": {
+      "aliases": [
+        "et",
+        "eth",
+        "ኢትዮጵያ",
+        "ethiopian"
+      ],
+      "continent": "africa"
+    },
+    "gabon": {
+      "aliases": [
+        "ga",
+        "gab",
+        "gabon",
+        "gabonese"
+      ],
+      "continent": "africa"
+    },
+    "gambia": {
+      "aliases": [
+        "gm",
+        "gmb",
+        "the gambia",
+        "gambian"
+      ],
+      "continent": "africa"
+    },
+    "ghana": {
+      "aliases": [
+        "gh",
+        "gha",
+        "ghana",
+        "ghanaian"
+      ],
+      "continent": "africa"
+    },
+    "guinea": {
+      "aliases": [
+        "gn",
+        "gin",
+        "guinée",
+        "guinean"
+      ],
+      "continent": "africa"
+    },
+    "guinea-bissau": {
+      "aliases": [
+        "gw",
+        "gnb",
+        "guinée-bissau",
+        "guinea-bissauan"
+      ],
+      "continent": "africa"
+    },
+    "ivory coast": {
+      "aliases": [
+        "ci",
+        "civ",
+        "côte d'ivoire",
+        "ivorian"
+      ],
+      "continent": "africa"
+    },
+    "kenya": {
+      "aliases": [
+        "ke",
+        "ken",
+        "kenya",
+        "kenyan"
+      ],
+      "continent": "africa"
+    },
+    "lesotho": {
+      "aliases": [
+        "ls",
+        "lso",
+        "lesotho",
+        "lesothan"
+      ],
+      "continent": "africa"
+    },
+    "liberia": {
+      "aliases": [
+        "lr",
+        "lbr",
+        "liberia",
+        "liberian"
+      ],
+      "continent": "africa"
+    },
+    "libya": {
+      "aliases": [
+        "ly",
+        "lby",
+        "ليبيا",
+        "libyan"
+      ],
+      "continent": "africa"
+    },
+    "madagascar": {
+      "aliases": [
+        "mg",
+        "mdg",
+        "madagasikara",
+        "malagasy"
+      ],
+      "continent": "africa"
+    },
+    "malawi": {
+      "aliases": [
+        "mw",
+        "mwi",
+        "malawi",
+        "malawian"
+      ],
+      "continent": "africa"
+    },
+    "mali": {
+      "aliases": [
+        "ml",
+        "mli",
+        "mali",
+        "malian"
+      ],
+      "continent": "africa"
+    },
+    "mauritania": {
+      "aliases": [
+        "mr",
+        "mrt",
+        "مورتانيا",
+        "mauritanian"
+      ],
+      "continent": "africa"
+    },
+    "mauritius": {
+      "aliases": [
+        "mu",
+        "mus",
+        "maurice",
+        "mauritian"
+      ],
+      "continent": "africa"
+    },
+    "morocco": {
+      "aliases": [
+        "ma",
+        "mar",
+        "المغرب",
+        "moroccan"
+      ],
+      "continent": "africa"
+    },
+    "mozambique": {
+      "aliases": [
+        "mz",
+        "moz",
+        "moçambique",
+        "mozambican"
+      ],
+      "continent": "africa"
+    },
+    "namibia": {
+      "aliases": [
+        "na",
+        "nam",
+        "namibia",
+        "namibian"
+      ],
+      "continent": "africa"
+    },
+    "niger": {
+      "aliases": [
+        "ne",
+        "ner",
+        "niger",
+        "nigerien"
+      ],
+      "continent": "africa"
+    },
+    "nigeria": {
+      "aliases": [
+        "ng",
+        "nga",
+        "nigeria",
+        "nigerian"
+      ],
+      "continent": "africa"
+    },
+    "rwanda": {
+      "aliases": [
+        "rw",
+        "rwa",
+        "u Rwanda",
+        "rwandan"
+      ],
+      "continent": "africa"
+    },
+    "sao tome and principe": {
+      "aliases": [
+        "st",
+        "stp",
+        "são tomé e príncipe",
+        "sao tomean"
+      ],
+      "continent": "africa"
+    },
+    "senegal": {
+      "aliases": [
+        "sn",
+        "sen",
+        "sénégal",
+        "senegalese"
+      ],
+      "continent": "africa"
+    },
+    "seychelles": {
+      "aliases": [
+        "sc",
+        "syc",
+        "seychelles",
+        "seychellois"
+      ],
+      "continent": "africa"
+    },
+    "sierra leone": {
+      "aliases": [
+        "sl",
+        "sle",
+        "sierra leone",
+        "sierra leonean"
+      ],
+      "continent": "africa"
+    },
+    "somalia": {
+      "aliases": [
+        "so",
+        "som",
+        "سومال",
+        "somali"
+      ],
+      "continent": "africa"
+    },
+    "south africa": {
+      "aliases": [
+        "za",
+        "zaf",
+        "south africa",
+        "south african"
+      ],
+      "continent": "africa"
+    },
+    "south sudan": {
+      "aliases": [
+        "ss",
+        "ssd",
+        "جنوب السودان",
+        "south sudanese"
+      ],
+      "continent": "africa"
+    },
+    "sudan": {
+      "aliases": [
+        "sd",
+        "sdn",
+        "السودان",
+        "sudanese"
+      ],
+      "continent": "africa"
+    },
+    "tanzania": {
+      "aliases": [
+        "tz",
+        "tza",
+        "tanzania",
+        "tanzanian"
+      ],
+      "continent": "africa"
+    },
+    "togo": {
+      "aliases": [
+        "tg",
+        "tgo",
+        "togo",
+        "togolese"
+      ],
+      "continent": "africa"
+    },
+    "tunisia": {
+      "aliases": [
+        "tn",
+        "tun",
+        "تونس",
+        "tunisian"
+      ],
+      "continent": "africa"
+    },
+    "uganda": {
+      "aliases": [
+        "ug",
+        "uga",
+        "uganda",
+        "ugandan"
+      ],
+      "continent": "africa"
+    },
+    "zambia": {
+      "aliases": [
+        "zm",
+        "zmb",
+        "zambia",
+        "zambian"
+      ],
+      "continent": "africa"
+    },
+    "zimbabwe": {
+      "aliases": [
+        "zw",
+        "zwe",
+        "zimbabwe",
+        "zimbabwean"
+      ],
+      "continent": "africa"
+    },
+    "canada": {
+      "aliases": [
+        "ca",
+        "can",
+        "canadian"
+      ],
+      "continent": "north_america"
+    },
+    "mexico": {
+      "aliases": [
+        "mx",
+        "mex",
+        "mexican",
+        "estados unidos mexicanos"
+      ],
+      "continent": "north_america"
+    },
+    "bahamas": {
+      "aliases": [
+        "bs",
+        "bhs",
+        "bahamian"
+      ],
+      "continent": "north_america"
+    },
+    "barbados": {
+      "aliases": [
+        "bb",
+        "brb",
+        "barbadian"
+      ],
+      "continent": "north_america"
+    },
+    "cuba": {
+      "aliases": [
+        "cu",
+        "cub",
+        "cuban",
+        "república de cuba"
+      ],
+      "continent": "north_america"
+    },
+    "dominica": {
+      "aliases": [
+        "dm",
+        "dma",
+        "dominican",
+        "commonwealth of dominica"
+      ],
+      "continent": "north_america"
+    },
+    "dominican republic": {
+      "aliases": [
+        "do",
+        "dom",
+        "dominican",
+        "república dominicana"
+      ],
+      "continent": "north_america"
+    },
+    "grenada": {
+      "aliases": [
+        "gd",
+        "grd",
+        "grenadian"
+      ],
+      "continent": "north_america"
+    },
+    "haiti": {
+      "aliases": [
+        "ht",
+        "hti",
+        "haitian",
+        "république d'Haïti"
+      ],
+      "continent": "north_america"
+    },
+    "jamaica": {
+      "aliases": [
+        "jm",
+        "jam",
+        "jamaican"
+      ],
+      "continent": "north_america"
+    },
+    "puerto rico": {
+      "aliases": [
+        "pr",
+        "pri",
+        "puerto rican"
+      ],
+      "continent": "north_america"
+    },
+    "saint kitts and nevis": {
+      "aliases": [
+        "kn",
+        "kna",
+        "kittitian",
+        "federation of saint kitts and nevis"
+      ],
+      "continent": "north_america"
+    },
+    "saint lucia": {
+      "aliases": [
+        "lc",
+        "lca",
+        "saint lucian"
+      ],
+      "continent": "north_america"
+    },
+    "saint vincent and the grenadines": {
+      "aliases": [
+        "vc",
+        "vct",
+        "vincentian"
+      ],
+      "continent": "north_america"
+    },
+    "sint maarten": {
+      "aliases": [
+        "sx",
+        "sxm",
+        "sint maarten"
+      ],
+      "continent": "north_america"
+    },
+    "trinidad and tobago": {
+      "aliases": [
+        "tt",
+        "tto",
+        "trinidadian",
+        "trinidad and tobago"
+      ],
+      "continent": "north_america"
+    },
+    "us virgin islands": {
+      "aliases": [
+        "vi",
+        "vgb",
+        "virgin islander"
+      ],
+      "continent": "north_america"
+    },
+    "bermuda": {
+      "aliases": [
+        "bm",
+        "bmu",
+        "bermudian"
+      ],
+      "continent": "north_america"
+    },
+    "belize": {
+      "aliases": [
+        "bz",
+        "blz",
+        "belizean"
+      ],
+      "continent": "north_america"
+    },
+    "costa rica": {
+      "aliases": [
+        "cr",
+        "cri",
+        "costarrican"
+      ],
+      "continent": "north_america"
+    },
+    "el salvador": {
+      "aliases": [
+        "sv",
+        "slv",
+        "salvadoran"
+      ],
+      "continent": "north_america"
+    },
+    "guatemala": {
+      "aliases": [
+        "gt",
+        "gtm",
+        "guatemalan"
+      ],
+      "continent": "north_america"
+    },
+    "honduras": {
+      "aliases": [
+        "hn",
+        "hnd",
+        "honduran"
+      ],
+      "continent": "north_america"
+    },
+    "nicaragua": {
+      "aliases": [
+        "ni",
+        "nic",
+        "nicaraguan"
+      ],
+      "continent": "north_america"
+    },
+    "argentina": {
+      "aliases": [
+        "ar",
+        "arg",
+        "argentina",
+        "argentino"
+      ],
+      "continent": "south_america"
+    },
+    "bolivia": {
+      "aliases": [
+        "bo",
+        "bol",
+        "bolivia",
+        "boliviano"
+      ],
+      "continent": "south_america"
+    },
+    "brazil": {
+      "aliases": [
+        "br",
+        "bra",
+        "brasil",
+        "brazilian"
+      ],
+      "continent": "south_america"
+    },
+    "chile": {
+      "aliases": [
+        "cl",
+        "chl",
+        "chile",
+        "chileno"
+      ],
+      "continent": "south_america"
+    },
+    "colombia": {
+      "aliases": [
+        "co",
+        "col",
+        "colombia",
+        "colombiano"
+      ],
+      "continent": "south_america"
+    },
+    "ecuador": {
+      "aliases": [
+        "ec",
+        "ecu",
+        "ecuador",
+        "ecuatoriano"
+      ],
+      "continent": "south_america"
+    },
+    "guyana": {
+      "aliases": [
+        "gy",
+        "guy",
+        "guyana",
+        "guyanese"
+      ],
+      "continent": "south_america"
+    },
+    "paraguay": {
+      "aliases": [
+        "py",
+        "pry",
+        "paraguay",
+        "paraguayo"
+      ],
+      "continent": "south_america"
+    },
+    "peru": {
+      "aliases": [
+        "pe",
+        "per",
+        "peru",
+        "peruano"
+      ],
+      "continent": "south_america"
+    },
+    "suriname": {
+      "aliases": [
+        "sr",
+        "sur",
+        "suriname",
+        "surinamese"
+      ],
+      "continent": "south_america"
+    },
+    "uruguay": {
+      "aliases": [
+        "uy",
+        "ury",
+        "uruguay",
+        "uruguayo"
+      ],
+      "continent": "south_america"
+    },
+    "venezuela": {
+      "aliases": [
+        "ve",
+        "ven",
+        "venezuela",
+        "venezolano"
+      ],
+      "continent": "south_america"
+    },
+    "french guiana": {
+      "aliases": [
+        "gf",
+        "guf",
+        "guyane française",
+        "french guianese"
+      ],
+      "continent": "south_america"
+    },
+    "falkland islands": {
+      "aliases": [
+        "fk",
+        "flk",
+        "falkland islands",
+        "falklander"
+      ],
+      "continent": "south_america"
+    },
+    "australia": {
+      "aliases": [
+        "au",
+        "aus",
+        "australia",
+        "aussie",
+        "australian"
+      ],
+      "continent": "oceania"
+    },
+    "new zealand": {
+      "aliases": [
+        "nz",
+        "nzl",
+        "aotearoa",
+        "kiwi",
+        "new zealander"
+      ],
+      "continent": "oceania"
+    },
+    "papua new guinea": {
+      "aliases": [
+        "pg",
+        "png",
+        "papua new guinea",
+        "papuan",
+        "new guinean"
+      ],
+      "continent": "oceania"
+    },
+    "fiji": {
+      "aliases": [
+        "fj",
+        "fji",
+        "fiji",
+        "fijian"
+      ],
+      "continent": "oceania"
+    },
+    "samoa": {
+      "aliases": [
+        "ws",
+        "wsm",
+        "samoa",
+        "samoan"
+      ],
+      "continent": "oceania"
+    },
+    "tonga": {
+      "aliases": [
+        "to",
+        "ton",
+        "tonga",
+        "tongan"
+      ],
+      "continent": "oceania"
+    },
+    "solomon islands": {
+      "aliases": [
+        "sb",
+        "slb",
+        "solomon islands",
+        "solomonese"
+      ],
+      "continent": "oceania"
+    },
+    "vanuatu": {
+      "aliases": [
+        "vu",
+        "vut",
+        "vanuatu",
+        "vanuatuan"
+      ],
+      "continent": "oceania"
+    },
+    "micronesia": {
+      "aliases": [
+        "fm",
+        "fsm",
+        "micronesia",
+        "micronesian"
+      ],
+      "continent": "oceania"
+    },
+    "marshall islands": {
+      "aliases": [
+        "mh",
+        "mhl",
+        "marshall islands",
+        "marshallese"
+      ],
+      "continent": "oceania"
+    },
+    "palau": {
+      "aliases": [
+        "pw",
+        "plw",
+        "palau",
+        "palauan"
+      ],
+      "continent": "oceania"
+    },
+    "tuvalu": {
+      "aliases": [
+        "tv",
+        "tuv",
+        "tuvalu",
+        "tuvaluan"
+      ],
+      "continent": "oceania"
+    },
+    "nauru": {
+      "aliases": [
+        "nr",
+        "nru",
+        "nauru",
+        "nauruan"
+      ],
+      "continent": "oceania"
+    },
+    "kiribati": {
+      "aliases": [
+        "ki",
+        "kir",
+        "kiribati",
+        "kiribatian"
+      ],
+      "continent": "oceania"
+    },
+    "cook islands": {
+      "aliases": [
+        "ck",
+        "cok",
+        "cook islands",
+        "cook islander"
+      ],
+      "continent": "oceania"
+    },
+    "niue": {
+      "aliases": [
+        "nu",
+        "niu",
+        "niue",
+        "niuean"
+      ],
+      "continent": "oceania"
+    },
+    "american samoa": {
+      "aliases": [
+        "as",
+        "asm",
+        "american samoa",
+        "american samoan"
+      ],
+      "continent": "oceania"
+    },
+    "french polynesia": {
+      "aliases": [
+        "pf",
+        "pyf",
+        "french polynesia",
+        "polynesian"
+      ],
+      "continent": "oceania"
+    },
+    "wallis and futuna": {
+      "aliases": [
+        "wf",
+        "wlf",
+        "wallis and futuna",
+        "wallisian",
+        "futunan"
+      ],
+      "continent": "oceania"
+    },
+    "new caledonia": {
+      "aliases": [
+        "nc",
+        "ncl",
+        "new caledonia",
+        "caledonian"
+      ],
+      "continent": "oceania"
+    }
+  },
+  "regions": {
+    "scandinavia": [
+      "denmark",
+      "finland",
+      "iceland",
+      "norway",
+      "sweden"
+    ],
+    "nordics": [
+      "denmark",
+      "finland",
+      "iceland",
+      "norway",
+      "sweden"
+    ],
+    "baltics": [
+      "estonia",
+      "latvia",
+      "lithuania"
+    ],
+    "benelux": [
+      "belgium",
+      "luxembourg",
+      "netherlands"
+    ],
+    "dach": [
+      "austria",
+      "germany",
+      "switzerland"
+    ],
+    "western europe": [
+      "belgium",
+      "france",
+      "luxembourg",
+      "monaco",
+      "netherlands",
+      "switzerland"
+    ],
+    "eastern europe": [
+      "belarus",
+      "bulgaria",
+      "czech republic",
+      "hungary",
+      "moldova",
+      "poland",
+      "romania",
+      "russia",
+      "slovakia",
+      "ukraine"
+    ],
+    "central europe": [
+      "germany",
+      "austria",
+      "switzerland",
+      "poland",
+      "czech republic",
+      "slovakia",
+      "hungary",
+      "liechtenstein"
+    ],
+    "southern europe": [
+      "albania",
+      "andorra",
+      "bosnia and herzegovina",
+      "croatia",
+      "cyprus",
+      "france",
+      "greece",
+      "italy",
+      "malta",
+      "monaco",
+      "montenegro",
+      "portugal",
+      "san marino",
+      "serbia",
+      "slovenia",
+      "spain"
+    ],
+    "northern europe": [
+      "denmark",
+      "estonia",
+      "finland",
+      "iceland",
+      "ireland",
+      "latvia",
+      "lithuania",
+      "norway",
+      "sweden",
+      "united kingdom"
+    ],
+    "europe": [
+      "albania",
+      "andorra",
+      "armenia",
+      "austria",
+      "azerbaijan",
+      "belarus",
+      "belgium",
+      "bosnia and herzegovina",
+      "bulgaria",
+      "croatia",
+      "cyprus",
+      "czech republic",
+      "denmark",
+      "estonia",
+      "finland",
+      "france",
+      "georgia",
+      "germany",
+      "greece",
+      "hungary",
+      "iceland",
+      "ireland",
+      "italy",
+      "latvia",
+      "liechtenstein",
+      "lithuania",
+      "luxembourg",
+      "malta",
+      "moldova",
+      "monaco",
+      "montenegro",
+      "netherlands",
+      "north macedonia",
+      "norway",
+      "poland",
+      "portugal",
+      "romania",
+      "russia",
+      "san marino",
+      "serbia",
+      "slovakia",
+      "slovenia",
+      "spain",
+      "sweden",
+      "switzerland",
+      "ukraine",
+      "united kingdom",
+      "vatican city"
+    ],
+    "european union": [
+      "austria",
+      "belgium",
+      "bulgaria",
+      "croatia",
+      "cyprus",
+      "czech republic",
+      "denmark",
+      "estonia",
+      "finland",
+      "france",
+      "germany",
+      "greece",
+      "hungary",
+      "ireland",
+      "italy",
+      "latvia",
+      "lithuania",
+      "luxembourg",
+      "malta",
+      "netherlands",
+      "poland",
+      "portugal",
+      "romania",
+      "slovakia",
+      "slovenia",
+      "spain",
+      "sweden"
+    ],
+    "eurozone": [
+      "austria",
+      "belgium",
+      "cyprus",
+      "estonia",
+      "finland",
+      "france",
+      "germany",
+      "greece",
+      "ireland",
+      "italy",
+      "latvia",
+      "lithuania",
+      "luxembourg",
+      "malta",
+      "netherlands",
+      "portugal",
+      "slovakia",
+      "slovenia",
+      "spain"
+    ],
+    "north america": [
+      "united states",
+      "canada",
+      "mexico"
+    ],
+    "central america": [
+      "mexico",
+      "guatemala",
+      "honduras",
+      "el salvador",
+      "nicaragua",
+      "costa rica",
+      "panama",
+      "belize"
+    ],
+    "south america": [
+      "brazil",
+      "argentina",
+      "chile",
+      "colombia",
+      "peru",
+      "venezuela",
+      "ecuador",
+      "bolivia",
+      "paraguay",
+      "uruguay",
+      "guyana",
+      "suriname"
+    ],
+    "latin america": [
+      "mexico",
+      "brazil",
+      "argentina",
+      "chile",
+      "colombia",
+      "peru",
+      "venezuela",
+      "ecuador",
+      "bolivia",
+      "paraguay",
+      "uruguay",
+      "costa rica",
+      "panama",
+      "guatemala",
+      "honduras",
+      "el salvador",
+      "nicaragua",
+      "cuba",
+      "dominican republic"
+    ],
+    "caribbean": [
+      "cuba",
+      "jamaica",
+      "haiti",
+      "dominican republic",
+      "trinidad and tobago",
+      "bahamas",
+      "barbados"
+    ],
+    "middle east": [
+      "afghanistan",
+      "bahrain",
+      "bangladesh",
+      "bhutan",
+      "brunei",
+      "iran",
+      "iraq",
+      "israel",
+      "jordan",
+      "kuwait",
+      "lebanon",
+      "oman",
+      "palestine",
+      "qatar",
+      "saudi arabia",
+      "syria",
+      "turkmenistan",
+      "united arab emirates",
+      "yemen"
+    ],
+    "gulf states": [
+      "saudi arabia",
+      "uae",
+      "united arab emirates",
+      "qatar",
+      "bahrain",
+      "kuwait",
+      "oman"
+    ],
+    "levant": [
+      "bahrain",
+      "israel",
+      "jordan",
+      "lebanon",
+      "palestine",
+      "syria"
+    ],
+    "north africa": [
+      "algeria",
+      "libya",
+      "morocco",
+      "tunisia"
+    ],
+    "west africa": [
+      "nigeria",
+      "ghana",
+      "senegal",
+      "ivory coast",
+      "cameroon",
+      "mali",
+      "burkina faso",
+      "guinea",
+      "sierra leone",
+      "liberia",
+      "togo",
+      "benin"
+    ],
+    "east africa": [
+      "kenya",
+      "ethiopia",
+      "tanzania",
+      "uganda",
+      "rwanda",
+      "burundi",
+      "somalia",
+      "south sudan",
+      "eritrea",
+      "djibouti"
+    ],
+    "southern africa": [
+      "south africa",
+      "namibia",
+      "botswana",
+      "zimbabwe",
+      "mozambique",
+      "zambia",
+      "malawi",
+      "angola",
+      "lesotho",
+      "eswatini"
+    ],
+    "sub-saharan africa": [],
+    "east asia": [
+      "china",
+      "japan",
+      "korea, north",
+      "korea, south",
+      "mongolia",
+      "taiwan"
+    ],
+    "southeast asia": [
+      "brunei",
+      "cambodia",
+      "indonesia",
+      "laos",
+      "malaysia",
+      "maldives",
+      "myanmar",
+      "philippines",
+      "singapore",
+      "thailand",
+      "vietnam"
+    ],
+    "south asia": [
+      "afghanistan",
+      "bangladesh",
+      "bhutan",
+      "india",
+      "maldives",
+      "nepal",
+      "pakistan",
+      "sri lanka"
+    ],
+    "central asia": [
+      "kazakhstan",
+      "kyrgyzstan",
+      "tajikistan",
+      "turkmenistan",
+      "uzbekistan"
+    ],
+    "asia pacific": [
+      "china",
+      "japan",
+      "south korea",
+      "taiwan",
+      "india",
+      "pakistan",
+      "bangladesh",
+      "sri lanka",
+      "singapore",
+      "malaysia",
+      "indonesia",
+      "thailand",
+      "vietnam",
+      "philippines",
+      "australia",
+      "new zealand"
+    ],
+    "oceania": [
+      "australia",
+      "new zealand",
+      "fiji",
+      "papua new guinea"
+    ],
+    "pacific islands": [],
+    "brics": [
+      "brazil",
+      "russia",
+      "india",
+      "china",
+      "south africa"
+    ],
+    "g7": [
+      "canada",
+      "france",
+      "germany",
+      "italy",
+      "japan",
+      "united kingdom",
+      "united states"
+    ],
+    "g20": [
+      "united states",
+      "china",
+      "japan",
+      "germany",
+      "united kingdom",
+      "france",
+      "india",
+      "italy",
+      "brazil",
+      "canada",
+      "south korea",
+      "russia",
+      "australia",
+      "mexico",
+      "indonesia",
+      "saudi arabia",
+      "turkey",
+      "argentina",
+      "south africa"
+    ],
+    "commonwealth": [],
+    "nato": [
+      "united states",
+      "canada",
+      "united kingdom",
+      "france",
+      "germany",
+      "italy",
+      "spain",
+      "netherlands",
+      "belgium",
+      "luxembourg",
+      "portugal",
+      "denmark",
+      "norway",
+      "iceland",
+      "turkey",
+      "greece",
+      "poland",
+      "czech republic",
+      "hungary",
+      "romania",
+      "bulgaria",
+      "croatia",
+      "slovenia",
+      "albania",
+      "north macedonia",
+      "montenegro",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "slovakia",
+      "finland",
+      "sweden"
+    ],
+    "asia": [
+      "china",
+      "japan",
+      "south korea",
+      "north korea",
+      "taiwan",
+      "mongolia",
+      "india",
+      "pakistan",
+      "bangladesh",
+      "sri lanka",
+      "nepal",
+      "bhutan",
+      "singapore",
+      "malaysia",
+      "indonesia",
+      "thailand",
+      "vietnam",
+      "philippines",
+      "myanmar",
+      "cambodia",
+      "laos",
+      "brunei",
+      "kazakhstan",
+      "uzbekistan",
+      "turkmenistan",
+      "kyrgyzstan",
+      "tajikistan"
+    ],
+    "africa": [
+      "nigeria",
+      "south africa",
+      "egypt",
+      "kenya",
+      "ethiopia",
+      "ghana",
+      "tanzania",
+      "morocco",
+      "algeria",
+      "tunisia",
+      "senegal",
+      "ivory coast",
+      "cameroon",
+      "uganda",
+      "mozambique"
+    ],
+    "british isles": [
+      "united kingdom",
+      "ireland"
+    ],
+    "iberia": [
+      "spain",
+      "portugal"
+    ],
+    "the americas": [
+      "united states",
+      "canada",
+      "mexico",
+      "brazil",
+      "argentina",
+      "chile",
+      "colombia",
+      "peru"
+    ],
+    "eu": [
+      "france",
+      "germany",
+      "italy",
+      "spain",
+      "portugal",
+      "netherlands",
+      "belgium",
+      "luxembourg",
+      "ireland",
+      "austria",
+      "finland",
+      "sweden",
+      "denmark",
+      "poland",
+      "czech republic",
+      "slovakia",
+      "hungary",
+      "romania",
+      "bulgaria",
+      "croatia",
+      "slovenia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "greece",
+      "cyprus",
+      "malta"
+    ]
+  }
+}

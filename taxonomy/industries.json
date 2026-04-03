@@ -1,0 +1,1981 @@
+{
+  "industries": {
+    "logistics": {
+      "naics_prefixes": [
+        "48",
+        "49",
+        "488",
+        "493"
+      ],
+      "keywords": [
+        "supply chain management",
+        "freight forwarding",
+        "last mile delivery",
+        "warehouse optimization",
+        "inventory control",
+        "transportation management",
+        "logistics automation",
+        "cold chain logistics",
+        "cross-docking",
+        "reverse logistics",
+        "third-party logistics",
+        "global shipping",
+        "route optimization",
+        "customs brokerage",
+        "fleet management"
+      ]
+    },
+    "software": {
+      "naics_prefixes": [
+        "5112",
+        "5113",
+        "5415"
+      ],
+      "keywords": [
+        "cloud computing",
+        "software as a service",
+        "application development",
+        "enterprise resource planning",
+        "customer relationship management",
+        "agile methodology",
+        "cybersecurity solutions",
+        "data analytics",
+        "artificial intelligence",
+        "machine learning",
+        "mobile app development",
+        "user experience design",
+        "software integration",
+        "open source software",
+        "devops practices"
+      ]
+    },
+    "fintech": {
+      "naics_prefixes": [
+        "523",
+        "524",
+        "5412"
+      ],
+      "keywords": [
+        "blockchain technology",
+        "digital payments",
+        "robo-advisors",
+        "peer-to-peer lending",
+        "cryptocurrency exchanges",
+        "insurtech solutions",
+        "mobile banking",
+        "financial analytics",
+        "regulatory compliance",
+        "wealth management",
+        "crowdfunding platforms",
+        "neobanks",
+        "payment gateways",
+        "financial literacy tools",
+        "investment platforms"
+      ]
+    },
+    "clean energy": {
+      "naics_prefixes": [
+        "2211",
+        "2212",
+        "5416"
+      ],
+      "keywords": [
+        "solar power systems",
+        "wind energy solutions",
+        "energy efficiency",
+        "smart grid technology",
+        "renewable energy certificates",
+        "energy storage systems",
+        "green building practices",
+        "carbon footprint reduction",
+        "sustainable energy",
+        "bioenergy production",
+        "hydropower generation",
+        "geothermal energy",
+        "energy audits",
+        "demand response programs",
+        "clean technology innovation"
+      ]
+    },
+    "renewable energy": {
+      "naics_prefixes": [
+        "2211",
+        "2212",
+        "5416"
+      ],
+      "keywords": [
+        "solar panel installation",
+        "wind turbine manufacturing",
+        "renewable energy policy",
+        "energy transition",
+        "sustainable resource management",
+        "offshore wind farms",
+        "biomass energy",
+        "hydrogen fuel cells",
+        "energy independence",
+        "microgrid solutions",
+        "renewable energy financing",
+        "community solar projects",
+        "energy resilience",
+        "carbon capture technology",
+        "renewable energy integration"
+      ]
+    },
+    "pharmaceutical": {
+      "naics_prefixes": [
+        "3254",
+        "5417"
+      ],
+      "keywords": [
+        "drug development",
+        "clinical trials",
+        "biopharmaceuticals",
+        "regulatory affairs",
+        "pharmacovigilance",
+        "formulation chemistry",
+        "therapeutic areas",
+        "generic drugs",
+        "orphan drugs",
+        "precision medicine",
+        "drug delivery systems",
+        "clinical research organizations",
+        "market access strategies",
+        "pharmaceutical manufacturing",
+        "healthcare compliance"
+      ]
+    },
+    "food and beverage": {
+      "naics_prefixes": [
+        "311",
+        "312"
+      ],
+      "keywords": [
+        "food safety standards",
+        "supply chain traceability",
+        "organic certification",
+        "product formulation",
+        "nutritional analysis",
+        "beverage innovation",
+        "food processing technology",
+        "sustainable sourcing",
+        "packaging solutions",
+        "quality assurance",
+        "food distribution networks",
+        "restaurant management",
+        "catering services",
+        "meal delivery services",
+        "food waste reduction"
+      ]
+    },
+    "construction": {
+      "naics_prefixes": [
+        "23"
+      ],
+      "keywords": [
+        "project management",
+        "building information modeling",
+        "sustainable construction",
+        "general contracting",
+        "construction safety",
+        "site development",
+        "civil engineering",
+        "residential construction",
+        "commercial construction",
+        "renovation projects",
+        "subcontractor management",
+        "construction materials",
+        "cost estimation",
+        "building codes compliance",
+        "infrastructure development"
+      ]
+    },
+    "e-commerce": {
+      "naics_prefixes": [
+        "4541",
+        "5411"
+      ],
+      "keywords": [
+        "online retail",
+        "digital marketing strategies",
+        "customer experience optimization",
+        "payment processing solutions",
+        "inventory management systems",
+        "dropshipping",
+        "e-commerce platforms",
+        "SEO best practices",
+        "conversion rate optimization",
+        "social media marketing",
+        "customer loyalty programs",
+        "fulfillment services",
+        "mobile commerce",
+        "user-generated content",
+        "abandoned cart recovery"
+      ]
+    },
+    "packaging": {
+      "naics_prefixes": [
+        "322",
+        "326"
+      ],
+      "keywords": [
+        "sustainable packaging solutions",
+        "custom packaging design",
+        "packaging machinery",
+        "labeling compliance",
+        "protective packaging",
+        "packaging materials",
+        "retail packaging",
+        "food packaging technology",
+        "biodegradable packaging",
+        "packaging supply chain",
+        "packaging testing",
+        "branding and packaging",
+        "packaging automation",
+        "recyclable materials",
+        "packaging logistics"
+      ]
+    },
+    "hr solutions": {
+      "naics_prefixes": [
+        "5416",
+        "5613"
+      ],
+      "keywords": [
+        "talent acquisition",
+        "employee engagement",
+        "performance management",
+        "HR technology",
+        "payroll processing",
+        "compliance management",
+        "workforce analytics",
+        "learning and development",
+        "benefits administration",
+        "employee retention strategies",
+        "HR consulting services",
+        "diversity and inclusion initiatives",
+        "succession planning",
+        "organizational development",
+        "HR outsourcing"
+      ]
+    },
+    "automotive": {
+      "naics_prefixes": [
+        "3361",
+        "3362"
+      ],
+      "keywords": [
+        "automotive manufacturing",
+        "vehicle design engineering",
+        "supply chain management",
+        "electric vehicles",
+        "automotive aftermarket",
+        "autonomous driving technology",
+        "vehicle safety standards",
+        "automotive electronics",
+        "fuel efficiency",
+        "automotive repair services",
+        "collision repair",
+        "automotive parts distribution",
+        "vehicle maintenance",
+        "car leasing services",
+        "automotive marketing"
+      ]
+    },
+    "battery": {
+      "naics_prefixes": [
+        "3359"
+      ],
+      "keywords": [
+        "lithium-ion batteries",
+        "battery manufacturing",
+        "energy storage solutions",
+        "battery recycling",
+        "battery management systems",
+        "electric vehicle batteries",
+        "renewable energy storage",
+        "battery testing and certification",
+        "solid-state batteries",
+        "battery supply chain",
+        "battery technology innovation",
+        "grid energy storage",
+        "battery performance optimization",
+        "battery pack assembly",
+        "battery safety standards"
+      ]
+    },
+    "cosmetics": {
+      "naics_prefixes": [
+        "3256"
+      ],
+      "keywords": [
+        "skincare formulations",
+        "cosmetic manufacturing",
+        "beauty product development",
+        "sustainable beauty",
+        "cosmetic regulations",
+        "fragrance development",
+        "makeup artistry",
+        "cosmetic packaging",
+        "anti-aging products",
+        "natural ingredients",
+        "cosmetic testing",
+        "color cosmetics",
+        "personal care products",
+        "cosmetic marketing strategies",
+        "beauty e-commerce"
+      ]
+    },
+    "aerospace": {
+      "naics_prefixes": [
+        "3364"
+      ],
+      "keywords": [
+        "aircraft manufacturing",
+        "aerospace engineering",
+        "space exploration technology",
+        "avionics systems",
+        "aerospace materials",
+        "flight testing",
+        "satellite communications",
+        "defense contracting",
+        "aircraft maintenance",
+        "unmanned aerial vehicles",
+        "aerospace supply chain",
+        "composite materials",
+        "aerospace safety standards",
+        "air traffic management",
+        "aerospace research and development"
+      ]
+    },
+    "defense": {
+      "naics_prefixes": [
+        "3364",
+        "5417"
+      ],
+      "keywords": [
+        "military contracting",
+        "defense technology",
+        "weapons systems",
+        "defense logistics",
+        "cybersecurity for defense",
+        "intelligence analysis",
+        "defense procurement",
+        "military training solutions",
+        "defense research and development",
+        "unmanned systems",
+        "defense supply chain",
+        "tactical communications",
+        "defense policy analysis",
+        "military simulation",
+        "defense consulting"
+      ]
+    },
+    "agriculture": {
+      "naics_prefixes": [
+        "111",
+        "112",
+        "115"
+      ],
+      "keywords": [
+        "precision agriculture",
+        "crop management",
+        "sustainable farming practices",
+        "agricultural technology",
+        "livestock management",
+        "organic farming",
+        "agricultural supply chain",
+        "irrigation systems",
+        "soil health management",
+        "agricultural research",
+        "farm equipment manufacturing",
+        "agricultural policy",
+        "food production systems",
+        "agroecology",
+        "farm-to-table initiatives"
+      ]
+    },
+    "mining": {
+      "naics_prefixes": [
+        "21",
+        "212",
+        "213"
+      ],
+      "keywords": [
+        "mineral extraction",
+        "ore processing",
+        "geological surveys",
+        "drilling operations",
+        "mining equipment",
+        "environmental impact",
+        "resource management",
+        "safety regulations",
+        "mining technology",
+        "site reclamation",
+        "exploration geology",
+        "coal mining",
+        "metal mining",
+        "quarrying",
+        "mineral rights"
+      ]
+    },
+    "oil and gas": {
+      "naics_prefixes": [
+        "211",
+        "213",
+        "486"
+      ],
+      "keywords": [
+        "hydrocarbon exploration",
+        "refining processes",
+        "petroleum engineering",
+        "drilling technology",
+        "pipeline transportation",
+        "oilfield services",
+        "natural gas production",
+        "fracking techniques",
+        "offshore drilling",
+        "geophysical surveys",
+        "reservoir management",
+        "energy markets",
+        "supply chain logistics",
+        "environmental compliance",
+        "petrochemical manufacturing"
+      ]
+    },
+    "telecommunications": {
+      "naics_prefixes": [
+        "517",
+        "5171",
+        "5172"
+      ],
+      "keywords": [
+        "broadband services",
+        "wireless communication",
+        "fiber optic networks",
+        "mobile technology",
+        "satellite systems",
+        "network infrastructure",
+        "telecom regulations",
+        "VoIP solutions",
+        "data transmission",
+        "5G technology",
+        "telecom billing systems",
+        "customer service platforms",
+        "signal processing",
+        "telecommunication equipment",
+        "internet service providers"
+      ]
+    },
+    "cybersecurity": {
+      "naics_prefixes": [
+        "5415",
+        "5416"
+      ],
+      "keywords": [
+        "threat detection",
+        "penetration testing",
+        "network security",
+        "data encryption",
+        "incident response",
+        "vulnerability assessment",
+        "firewall management",
+        "malware analysis",
+        "security compliance",
+        "identity management",
+        "cyber risk assessment",
+        "security information",
+        "incident management",
+        "cloud security",
+        "endpoint protection"
+      ]
+    },
+    "artificial intelligence": {
+      "naics_prefixes": [
+        "5417"
+      ],
+      "keywords": [
+        "machine learning algorithms",
+        "natural language processing",
+        "computer vision",
+        "predictive analytics",
+        "AI ethics",
+        "deep learning frameworks",
+        "neural networks",
+        "automated reasoning",
+        "intelligent agents",
+        "data mining",
+        "AI model training",
+        "reinforcement learning",
+        "AI applications",
+        "cognitive computing",
+        "AI-driven insights"
+      ]
+    },
+    "machine learning": {
+      "naics_prefixes": [
+        "5417"
+      ],
+      "keywords": [
+        "supervised learning",
+        "unsupervised learning",
+        "training datasets",
+        "feature engineering",
+        "model evaluation",
+        "predictive modeling",
+        "algorithm optimization",
+        "data preprocessing",
+        "classification techniques",
+        "regression analysis",
+        "neural network training",
+        "ensemble methods",
+        "hyperparameter tuning",
+        "real-time analytics",
+        "scalable solutions"
+      ]
+    },
+    "robotics": {
+      "naics_prefixes": [
+        "3332",
+        "3345"
+      ],
+      "keywords": [
+        "automation systems",
+        "robotic process automation",
+        "industrial robots",
+        "robotic arms",
+        "sensors and actuators",
+        "robot programming",
+        "machine vision",
+        "robotic navigation",
+        "AI integration",
+        "human-robot interaction",
+        "robotic simulation",
+        "autonomous vehicles",
+        "drones and UAVs",
+        "robotic manufacturing",
+        "service robots"
+      ]
+    },
+    "iot": {
+      "naics_prefixes": [
+        "334",
+        "5415"
+      ],
+      "keywords": [
+        "smart devices",
+        "connected sensors",
+        "data analytics",
+        "IoT platforms",
+        "edge computing",
+        "wireless communication",
+        "device management",
+        "real-time monitoring",
+        "IoT security",
+        "cloud integration",
+        "machine-to-machine communication",
+        "smart home technology",
+        "industrial IoT",
+        "wearable technology",
+        "IoT applications"
+      ]
+    },
+    "semiconductor": {
+      "naics_prefixes": [
+        "3344"
+      ],
+      "keywords": [
+        "wafer fabrication",
+        "chip design",
+        "integrated circuits",
+        "semiconductor manufacturing",
+        "cleanroom technology",
+        "photolithography",
+        "packaging solutions",
+        "test and measurement",
+        "microelectronics",
+        "silicon technology",
+        "semiconductor materials",
+        "device characterization",
+        "yield optimization",
+        "semiconductor supply chain",
+        "advanced packaging"
+      ]
+    },
+    "medical devices": {
+      "naics_prefixes": [
+        "3391"
+      ],
+      "keywords": [
+        "diagnostic equipment",
+        "surgical instruments",
+        "patient monitoring systems",
+        "medical imaging",
+        "biomedical engineering",
+        "regulatory compliance",
+        "clinical trials",
+        "healthcare technology",
+        "wearable health devices",
+        "implantable devices",
+        "telehealth solutions",
+        "medical software",
+        "quality assurance",
+        "product development",
+        "healthcare innovation"
+      ]
+    },
+    "healthcare": {
+      "naics_prefixes": [
+        "621",
+        "622"
+      ],
+      "keywords": [
+        "patient care",
+        "health information technology",
+        "clinical services",
+        "healthcare management",
+        "telemedicine",
+        "healthcare analytics",
+        "medical billing",
+        "healthcare compliance",
+        "population health",
+        "chronic disease management",
+        "healthcare policy",
+        "patient engagement",
+        "healthcare quality",
+        "medical research",
+        "healthcare workforce"
+      ]
+    },
+    "insurance": {
+      "naics_prefixes": [
+        "524"
+      ],
+      "keywords": [
+        "risk assessment",
+        "underwriting processes",
+        "claims management",
+        "policy administration",
+        "insurance products",
+        "actuarial analysis",
+        "customer service",
+        "fraud detection",
+        "insurance regulations",
+        "premium calculations",
+        "reinsurance",
+        "loss prevention",
+        "insurance technology",
+        "coverage options",
+        "insurance marketing"
+      ]
+    },
+    "real estate": {
+      "naics_prefixes": [
+        "531"
+      ],
+      "keywords": [
+        "property management",
+        "real estate development",
+        "commercial leasing",
+        "residential sales",
+        "real estate investment",
+        "market analysis",
+        "property valuation",
+        "real estate brokerage",
+        "land use planning",
+        "zoning regulations",
+        "real estate financing",
+        "tenant relations",
+        "real estate marketing",
+        "property appraisal",
+        "real estate law"
+      ]
+    },
+    "hospitality": {
+      "naics_prefixes": [
+        "721"
+      ],
+      "keywords": [
+        "hotel management",
+        "guest services",
+        "event planning",
+        "food and beverage",
+        "hospitality technology",
+        "customer experience",
+        "hospitality marketing",
+        "sustainability practices",
+        "hospitality training",
+        "property management systems",
+        "restaurant operations",
+        "travel and tourism",
+        "hospitality analytics",
+        "guest satisfaction",
+        "hospitality trends"
+      ]
+    },
+    "tourism": {
+      "naics_prefixes": [
+        "487",
+        "561",
+        "721"
+      ],
+      "keywords": [
+        "travel planning",
+        "tour packages",
+        "destination marketing",
+        "tourist attractions",
+        "cultural experiences",
+        "travel agencies",
+        "sustainable tourism",
+        "hospitality services",
+        "tourism statistics",
+        "event tourism",
+        "adventure tourism",
+        "eco-tourism",
+        "travel technology",
+        "tourism policy",
+        "tourism development"
+      ]
+    },
+    "media": {
+      "naics_prefixes": [
+        "511",
+        "512"
+      ],
+      "keywords": [
+        "content creation",
+        "digital media",
+        "broadcasting",
+        "media production",
+        "advertising strategies",
+        "social media marketing",
+        "media distribution",
+        "journalism ethics",
+        "media analytics",
+        "public relations",
+        "media planning",
+        "multimedia storytelling",
+        "video production",
+        "audio production",
+        "media rights management"
+      ]
+    },
+    "entertainment": {
+      "naics_prefixes": [
+        "512",
+        "711"
+      ],
+      "keywords": [
+        "live performances",
+        "film production",
+        "theatrical productions",
+        "music industry",
+        "entertainment marketing",
+        "event management",
+        "content licensing",
+        "digital streaming",
+        "entertainment technology",
+        "audience engagement",
+        "production design",
+        "post-production",
+        "entertainment law",
+        "talent management",
+        "entertainment analytics"
+      ]
+    },
+    "gaming": {
+      "naics_prefixes": [
+        "5112",
+        "5113",
+        "5415"
+      ],
+      "keywords": [
+        "game development",
+        "interactive entertainment",
+        "virtual reality",
+        "augmented reality",
+        "mobile gaming",
+        "eSports",
+        "game design",
+        "user experience",
+        "multiplayer online",
+        "game monetization",
+        "indie games",
+        "console gaming",
+        "game publishing",
+        "in-game advertising",
+        "cloud gaming"
+      ]
+    },
+    "education": {
+      "naics_prefixes": [
+        "6111",
+        "6112",
+        "6113"
+      ],
+      "keywords": [
+        "curriculum development",
+        "educational assessment",
+        "learning management systems",
+        "student engagement",
+        "teacher training",
+        "online learning",
+        "blended learning",
+        "educational technology",
+        "special education",
+        "adult education",
+        "early childhood education",
+        "distance education",
+        "educational consulting",
+        "academic advising",
+        "educational policy"
+      ]
+    },
+    "edtech": {
+      "naics_prefixes": [
+        "5112",
+        "6111",
+        "6114"
+      ],
+      "keywords": [
+        "learning analytics",
+        "digital classrooms",
+        "adaptive learning",
+        "educational software",
+        "e-learning platforms",
+        "virtual classrooms",
+        "student information systems",
+        "mobile learning",
+        "gamification",
+        "content management systems",
+        "online assessments",
+        "interactive whiteboards",
+        "educational apps",
+        "cloud-based learning",
+        "teacher collaboration tools"
+      ]
+    },
+    "legal tech": {
+      "naics_prefixes": [
+        "5411",
+        "5412",
+        "5413"
+      ],
+      "keywords": [
+        "legal research software",
+        "case management systems",
+        "document automation",
+        "e-discovery tools",
+        "contract management",
+        "legal analytics",
+        "compliance management",
+        "intellectual property management",
+        "online dispute resolution",
+        "law firm marketing",
+        "client relationship management",
+        "legal billing software",
+        "data privacy solutions",
+        "court management systems",
+        "legal project management"
+      ]
+    },
+    "proptech": {
+      "naics_prefixes": [
+        "5311",
+        "5312",
+        "5313"
+      ],
+      "keywords": [
+        "real estate technology",
+        "property management software",
+        "smart buildings",
+        "real estate analytics",
+        "virtual property tours",
+        "tenant engagement",
+        "real estate crowdfunding",
+        "blockchain in real estate",
+        "automated valuation models",
+        "property listing platforms",
+        "real estate investment",
+        "building information modeling",
+        "digital leasing",
+        "location intelligence",
+        "urban planning technology"
+      ]
+    },
+    "martech": {
+      "naics_prefixes": [
+        "5418",
+        "5416",
+        "5415"
+      ],
+      "keywords": [
+        "marketing automation",
+        "customer relationship management",
+        "data-driven marketing",
+        "content marketing platforms",
+        "social media analytics",
+        "email marketing solutions",
+        "search engine optimization",
+        "lead generation tools",
+        "digital advertising",
+        "customer segmentation",
+        "marketing analytics",
+        "brand management software",
+        "influencer marketing",
+        "campaign management",
+        "performance marketing"
+      ]
+    },
+    "adtech": {
+      "naics_prefixes": [
+        "5418",
+        "5415",
+        "5416"
+      ],
+      "keywords": [
+        "programmatic advertising",
+        "ad exchanges",
+        "real-time bidding",
+        "digital ad networks",
+        "targeted advertising",
+        "advertising analytics",
+        "creative optimization",
+        "mobile advertising",
+        "video advertising",
+        "attribution modeling",
+        "ad fraud detection",
+        "cross-channel marketing",
+        "data management platforms",
+        "customer journey mapping",
+        "brand safety solutions"
+      ]
+    },
+    "biotech": {
+      "naics_prefixes": [
+        "3254",
+        "5417",
+        "6215"
+      ],
+      "keywords": [
+        "genetic engineering",
+        "biopharmaceuticals",
+        "clinical trials",
+        "molecular diagnostics",
+        "biomanufacturing",
+        "cell therapy",
+        "gene therapy",
+        "bioprocessing",
+        "synthetic biology",
+        "personalized medicine",
+        "biomarkers",
+        "vaccines development",
+        "CRISPR technology",
+        "regenerative medicine",
+        "biotechnology research"
+      ]
+    },
+    "nanotechnology": {
+      "naics_prefixes": [
+        "5417",
+        "3254",
+        "3345"
+      ],
+      "keywords": [
+        "nanomaterials",
+        "nanoscale fabrication",
+        "nanomedicine",
+        "nanocomposites",
+        "quantum dots",
+        "nanoelectronics",
+        "surface engineering",
+        "nanostructures",
+        "self-assembly",
+        "nanotechnology applications",
+        "carbon nanotubes",
+        "nanotechnology research",
+        "nano-coatings",
+        "biological nanotechnology",
+        "environmental nanotechnology"
+      ]
+    },
+    "3d printing": {
+      "naics_prefixes": [
+        "3329",
+        "3332",
+        "5415"
+      ],
+      "keywords": [
+        "additive manufacturing",
+        "rapid prototyping",
+        "3D modeling",
+        "customized production",
+        "industrial 3D printing",
+        "3D printing materials",
+        "desktop 3D printers",
+        "bioprinting",
+        "metal 3D printing",
+        "3D printing software",
+        "on-demand manufacturing",
+        "3D scanning",
+        "supply chain optimization",
+        "3D printing services",
+        "consumer 3D printing"
+      ]
+    },
+    "water treatment": {
+      "naics_prefixes": [
+        "2213",
+        "5622",
+        "5413"
+      ],
+      "keywords": [
+        "wastewater treatment",
+        "water purification",
+        "desalination",
+        "water quality monitoring",
+        "filtration systems",
+        "reverse osmosis",
+        "water recycling",
+        "chemical treatment",
+        "biological treatment",
+        "drinking water standards",
+        "water management solutions",
+        "stormwater management",
+        "water conservation",
+        "industrial water treatment",
+        "water treatment chemicals"
+      ]
+    },
+    "waste management": {
+      "naics_prefixes": [
+        "5621",
+        "5622",
+        "5629"
+      ],
+      "keywords": [
+        "solid waste management",
+        "hazardous waste disposal",
+        "landfill management",
+        "recycling services",
+        "waste collection",
+        "composting",
+        "waste-to-energy",
+        "waste reduction strategies",
+        "environmental compliance",
+        "waste audit",
+        "circular economy",
+        "waste processing",
+        "resource recovery",
+        "waste diversion",
+        "sustainable waste management"
+      ]
+    },
+    "recycling": {
+      "naics_prefixes": [
+        "5621",
+        "5622",
+        "4239"
+      ],
+      "keywords": [
+        "material recovery",
+        "recyclable materials",
+        "e-waste recycling",
+        "plastic recycling",
+        "metal recycling",
+        "paper recycling",
+        "recycling technology",
+        "closed-loop recycling",
+        "recycling facilities",
+        "recycling programs",
+        "waste sorting",
+        "recycling education",
+        "recycling incentives",
+        "sustainable materials",
+        "circular economy initiatives"
+      ]
+    },
+    "textile": {
+      "naics_prefixes": [
+        "3131",
+        "3132",
+        "3141"
+      ],
+      "keywords": [
+        "fabric production",
+        "textile manufacturing",
+        "sustainable textiles",
+        "textile design",
+        "woven fabrics",
+        "knitted fabrics",
+        "technical textiles",
+        "textile recycling",
+        "textile supply chain",
+        "natural fibers",
+        "synthetic fibers",
+        "textile finishing",
+        "apparel manufacturing",
+        "textile testing",
+        "fashion textiles"
+      ]
+    },
+    "fashion": {
+      "naics_prefixes": [
+        "4481",
+        "3152",
+        "3151"
+      ],
+      "keywords": [
+        "fashion design",
+        "apparel production",
+        "luxury fashion",
+        "sustainable fashion",
+        "fashion retail",
+        "fashion marketing",
+        "trend forecasting",
+        "fashion merchandising",
+        "clothing brands",
+        "accessory design",
+        "fashion technology",
+        "e-commerce fashion",
+        "fashion supply chain",
+        "fashion shows",
+        "custom clothing"
+      ]
+    },
+    "furniture": {
+      "naics_prefixes": [
+        "3371",
+        "3372",
+        "3379"
+      ],
+      "keywords": [
+        "furniture design",
+        "custom furniture",
+        "office furniture",
+        "sustainable furniture",
+        "furniture manufacturing",
+        "upholstery",
+        "furniture retail",
+        "interior design",
+        "furniture restoration",
+        "ergonomic furniture",
+        "furniture logistics",
+        "furniture supply chain",
+        "modular furniture",
+        "furniture trends",
+        "outdoor furniture"
+      ]
+    },
+    "electronics": {
+      "naics_prefixes": [
+        "3341",
+        "3342",
+        "3343"
+      ],
+      "keywords": [
+        "consumer electronics",
+        "semiconductor manufacturing",
+        "electronic components",
+        "embedded systems",
+        "circuit design",
+        "IoT devices",
+        "wearable technology",
+        "telecommunications equipment",
+        "audio electronics",
+        "video electronics",
+        "power electronics",
+        "electronic testing",
+        "RFID technology",
+        "smart home devices",
+        "automotive electronics"
+      ]
+    },
+    "consumer electronics": {
+      "naics_prefixes": [
+        "3341",
+        "3342",
+        "3343",
+        "3344",
+        "3345"
+      ],
+      "keywords": [
+        "smartphones",
+        "tablets",
+        "wearable technology",
+        "home automation",
+        "audio equipment",
+        "televisions",
+        "gaming consoles",
+        "consumer appliances",
+        "digital cameras",
+        "smart home devices",
+        "virtual reality",
+        "augmented reality",
+        "personal computers",
+        "accessories",
+        "internet of things"
+      ]
+    },
+    "industrial machinery": {
+      "naics_prefixes": [
+        "3331",
+        "3332",
+        "3333",
+        "3334",
+        "3335"
+      ],
+      "keywords": [
+        "manufacturing equipment",
+        "automation systems",
+        "robotic arms",
+        "CNC machines",
+        "industrial robots",
+        "conveyor systems",
+        "hydraulic systems",
+        "pneumatic tools",
+        "precision instruments",
+        "metalworking machinery",
+        "packaging machinery",
+        "textile machinery",
+        "construction equipment",
+        "agricultural machinery",
+        "maintenance services"
+      ]
+    },
+    "chemicals": {
+      "naics_prefixes": [
+        "3251",
+        "3252",
+        "3253",
+        "3254",
+        "3255"
+      ],
+      "keywords": [
+        "petrochemicals",
+        "specialty chemicals",
+        "agricultural chemicals",
+        "polymers",
+        "adhesives",
+        "coatings",
+        "fertilizers",
+        "biochemicals",
+        "pharmaceuticals",
+        "cleaning agents",
+        "solvents",
+        "chemical manufacturing",
+        "industrial chemicals",
+        "chemical processing",
+        "supply chain management"
+      ]
+    },
+    "plastics": {
+      "naics_prefixes": [
+        "3261",
+        "3262",
+        "3263",
+        "3264",
+        "3269"
+      ],
+      "keywords": [
+        "plastic molding",
+        "extrusion processes",
+        "thermoplastics",
+        "thermosetting plastics",
+        "plastic packaging",
+        "biodegradable plastics",
+        "plastic recycling",
+        "composite materials",
+        "injection molding",
+        "blow molding",
+        "plastic films",
+        "plastic containers",
+        "automotive plastics",
+        "medical plastics",
+        "consumer goods"
+      ]
+    },
+    "steel": {
+      "naics_prefixes": [
+        "3311",
+        "3312",
+        "3313",
+        "3314"
+      ],
+      "keywords": [
+        "steel production",
+        "steel fabrication",
+        "hot-rolled steel",
+        "cold-rolled steel",
+        "stainless steel",
+        "alloy steel",
+        "steel processing",
+        "structural steel",
+        "steel tubes",
+        "steel sheets",
+        "metal alloys",
+        "welding services",
+        "steel supply chain",
+        "construction steel",
+        "steel recycling"
+      ]
+    },
+    "metals": {
+      "naics_prefixes": [
+        "3314",
+        "3315",
+        "3316",
+        "3317"
+      ],
+      "keywords": [
+        "non-ferrous metals",
+        "metal alloys",
+        "metal casting",
+        "metal stamping",
+        "metal fabrication",
+        "recycling metals",
+        "precious metals",
+        "ferrous metals",
+        "metal processing",
+        "sheet metal",
+        "metalworking",
+        "foundry services",
+        "metal supply chain",
+        "industrial metals",
+        "metal finishing"
+      ]
+    },
+    "shipping": {
+      "naics_prefixes": [
+        "4881",
+        "4883",
+        "4884"
+      ],
+      "keywords": [
+        "freight forwarding",
+        "logistics management",
+        "cargo shipping",
+        "container shipping",
+        "shipping routes",
+        "customs brokerage",
+        "supply chain logistics",
+        "maritime shipping",
+        "shipping regulations",
+        "international shipping",
+        "shipping documentation",
+        "transportation services",
+        "shipping insurance",
+        "port operations",
+        "shipping technology"
+      ]
+    },
+    "maritime": {
+      "naics_prefixes": [
+        "4831",
+        "4883",
+        "4885"
+      ],
+      "keywords": [
+        "shipping industry",
+        "maritime logistics",
+        "naval architecture",
+        "marine engineering",
+        "offshore services",
+        "fishing industry",
+        "shipbuilding",
+        "port management",
+        "marine transportation",
+        "oceanography",
+        "marine safety",
+        "environmental compliance",
+        "maritime law",
+        "vessel operations",
+        "marine research"
+      ]
+    },
+    "aviation": {
+      "naics_prefixes": [
+        "4811",
+        "4812",
+        "4881"
+      ],
+      "keywords": [
+        "commercial aviation",
+        "aircraft manufacturing",
+        "airline operations",
+        "aviation safety",
+        "air traffic control",
+        "flight training",
+        "aerospace engineering",
+        "aircraft maintenance",
+        "aviation logistics",
+        "airport management",
+        "charter services",
+        "cargo airlines",
+        "aviation regulations",
+        "drone technology",
+        "aviation fuel"
+      ]
+    },
+    "railways": {
+      "naics_prefixes": [
+        "4821",
+        "4822",
+        "4882"
+      ],
+      "keywords": [
+        "freight rail",
+        "passenger rail",
+        "railway infrastructure",
+        "railway operations",
+        "rail maintenance",
+        "rail signaling",
+        "rail safety",
+        "locomotive manufacturing",
+        "railway logistics",
+        "track construction",
+        "railway technology",
+        "intermodal transport",
+        "railway regulations",
+        "railway engineering",
+        "urban transit"
+      ]
+    },
+    "trucking": {
+      "naics_prefixes": [
+        "4841",
+        "4842",
+        "4843"
+      ],
+      "keywords": [
+        "freight trucking",
+        "long-haul trucking",
+        "local delivery",
+        "trucking logistics",
+        "refrigerated trucking",
+        "flatbed trucking",
+        "trucking regulations",
+        "transportation management",
+        "trucking fleet",
+        "cargo transport",
+        "trucking safety",
+        "driver training",
+        "logistics solutions",
+        "trucking technology",
+        "last mile trucking"
+      ]
+    },
+    "last mile delivery": {
+      "naics_prefixes": [
+        "4921",
+        "4922"
+      ],
+      "keywords": [
+        "last mile logistics",
+        "urban delivery",
+        "same-day delivery",
+        "delivery optimization",
+        "last mile solutions",
+        "delivery tracking",
+        "last mile carriers",
+        "e-commerce delivery",
+        "delivery networks",
+        "route planning",
+        "customer experience",
+        "delivery technology",
+        "package handling",
+        "delivery fleet",
+        "last mile fulfillment"
+      ]
+    },
+    "cold chain": {
+      "naics_prefixes": [
+        "4931",
+        "4932"
+      ],
+      "keywords": [
+        "temperature-controlled logistics",
+        "refrigerated transport",
+        "cold storage",
+        "perishable goods",
+        "supply chain management",
+        "cold chain monitoring",
+        "food safety",
+        "pharmaceutical logistics",
+        "temperature-sensitive products",
+        "logistics solutions",
+        "cold chain compliance",
+        "inventory management",
+        "transportation services",
+        "cold chain technology",
+        "last mile cold chain"
+      ]
+    },
+    "data center": {
+      "naics_prefixes": [
+        "5182",
+        "5415"
+      ],
+      "keywords": [
+        "data storage",
+        "cloud computing",
+        "server management",
+        "data security",
+        "virtualization",
+        "network infrastructure",
+        "disaster recovery",
+        "data center operations",
+        "colocation services",
+        "energy efficiency",
+        "data center design",
+        "scalability",
+        "high availability",
+        "data backup",
+        "IT infrastructure"
+      ]
+    },
+    "cloud infrastructure": {
+      "naics_prefixes": [
+        "5182",
+        "5415"
+      ],
+      "keywords": [
+        "cloud services",
+        "infrastructure as a service",
+        "platform as a service",
+        "software as a service",
+        "cloud storage",
+        "virtual machines",
+        "cloud security",
+        "data management",
+        "API integration",
+        "cloud migration",
+        "hybrid cloud",
+        "public cloud",
+        "private cloud",
+        "cloud architecture",
+        "cloud computing solutions"
+      ]
+    },
+    "payment processing": {
+      "naics_prefixes": [
+        "5223",
+        "5415"
+      ],
+      "keywords": [
+        "transaction processing",
+        "payment gateways",
+        "merchant services",
+        "digital wallets",
+        "point of sale systems",
+        "fraud detection",
+        "mobile payments",
+        "e-commerce solutions",
+        "recurring billing",
+        "cross-border payments",
+        "PCI compliance",
+        "chargeback management",
+        "cryptocurrency transactions",
+        "API integration",
+        "financial technology"
+      ]
+    },
+    "wealth management": {
+      "naics_prefixes": [
+        "5239",
+        "5231"
+      ],
+      "keywords": [
+        "investment strategies",
+        "portfolio management",
+        "financial planning",
+        "asset allocation",
+        "retirement planning",
+        "tax optimization",
+        "estate planning",
+        "risk assessment",
+        "wealth preservation",
+        "client relationship management",
+        "fiduciary responsibility",
+        "alternative investments",
+        "impact investing",
+        "financial advisory",
+        "trust services"
+      ]
+    },
+    "private equity": {
+      "naics_prefixes": [
+        "5232"
+      ],
+      "keywords": [
+        "leveraged buyouts",
+        "venture capital",
+        "growth capital",
+        "portfolio companies",
+        "exit strategies",
+        "due diligence",
+        "investment thesis",
+        "capital raising",
+        "fund management",
+        "financial restructuring",
+        "operational improvements",
+        "market analysis",
+        "deal sourcing",
+        "limited partners",
+        "investment returns"
+      ]
+    },
+    "venture capital": {
+      "naics_prefixes": [
+        "5239"
+      ],
+      "keywords": [
+        "seed funding",
+        "startup investments",
+        "pitch decks",
+        "equity financing",
+        "scalability",
+        "disruptive innovation",
+        "angel investors",
+        "valuation metrics",
+        "accelerator programs",
+        "market fit",
+        "exit opportunities",
+        "portfolio diversification",
+        "investment rounds",
+        "business models",
+        "networking events"
+      ]
+    },
+    "accounting": {
+      "naics_prefixes": [
+        "5412"
+      ],
+      "keywords": [
+        "financial statements",
+        "tax compliance",
+        "auditing services",
+        "bookkeeping",
+        "forensic accounting",
+        "cost accounting",
+        "payroll processing",
+        "GAAP standards",
+        "financial analysis",
+        "budget forecasting",
+        "account reconciliation",
+        "tax planning",
+        "business valuation",
+        "financial reporting",
+        "consulting services"
+      ]
+    },
+    "consulting": {
+      "naics_prefixes": [
+        "5416"
+      ],
+      "keywords": [
+        "strategic planning",
+        "business transformation",
+        "change management",
+        "operational efficiency",
+        "market research",
+        "organizational development",
+        "process improvement",
+        "risk management",
+        "stakeholder engagement",
+        "performance metrics",
+        "project management",
+        "technology implementation",
+        "human resources consulting",
+        "financial advisory",
+        "supply chain optimization"
+      ]
+    },
+    "staffing": {
+      "naics_prefixes": [
+        "5613"
+      ],
+      "keywords": [
+        "talent acquisition",
+        "temporary staffing",
+        "recruitment services",
+        "employee onboarding",
+        "workforce management",
+        "skills assessment",
+        "job placement",
+        "contract staffing",
+        "payroll services",
+        "HR outsourcing",
+        "candidate sourcing",
+        "staff augmentation",
+        "employment branding",
+        "diversity hiring",
+        "performance evaluation"
+      ]
+    },
+    "facility management": {
+      "naics_prefixes": [
+        "5612"
+      ],
+      "keywords": [
+        "property management",
+        "maintenance services",
+        "space optimization",
+        "sustainability practices",
+        "vendor management",
+        "asset management",
+        "building operations",
+        "safety compliance",
+        "energy management",
+        "cleaning services",
+        "occupancy planning",
+        "facility audits",
+        "emergency preparedness",
+        "project management",
+        "real estate strategy"
+      ]
+    },
+    "security services": {
+      "naics_prefixes": [
+        "5616"
+      ],
+      "keywords": [
+        "physical security",
+        "cybersecurity solutions",
+        "risk assessment",
+        "surveillance systems",
+        "access control",
+        "security consulting",
+        "incident response",
+        "security personnel",
+        "alarm monitoring",
+        "loss prevention",
+        "emergency response planning",
+        "security audits",
+        "background checks",
+        "fire safety",
+        "security technology"
+      ]
+    },
+    "environmental services": {
+      "naics_prefixes": [
+        "5621",
+        "5622"
+      ],
+      "keywords": [
+        "waste management",
+        "recycling programs",
+        "environmental compliance",
+        "contaminated site remediation",
+        "sustainability consulting",
+        "pollution control",
+        "hazardous waste disposal",
+        "environmental assessments",
+        "green certifications",
+        "energy efficiency",
+        "water quality management",
+        "carbon footprint analysis",
+        "renewable energy solutions",
+        "biodiversity conservation",
+        "environmental education"
+      ]
+    },
+    "engineering services": {
+      "naics_prefixes": [
+        "5413"
+      ],
+      "keywords": [
+        "civil engineering",
+        "mechanical design",
+        "structural analysis",
+        "project management",
+        "feasibility studies",
+        "CAD services",
+        "environmental engineering",
+        "electrical systems",
+        "quality assurance",
+        "construction management",
+        "safety engineering",
+        "research and development",
+        "system integration",
+        "technical consulting",
+        "regulatory compliance"
+      ]
+    },
+    "architecture": {
+      "naics_prefixes": [
+        "5413"
+      ],
+      "keywords": [
+        "design development",
+        "building codes",
+        "sustainable architecture",
+        "urban planning",
+        "interior design",
+        "landscape architecture",
+        "3D modeling",
+        "construction documentation",
+        "project visualization",
+        "historic preservation",
+        "site analysis",
+        "client consultation",
+        "zoning regulations",
+        "feasibility studies",
+        "architectural rendering"
+      ]
+    },
+    "digital marketing": {
+      "naics_prefixes": [
+        "5418"
+      ],
+      "keywords": [
+        "search engine optimization",
+        "content marketing",
+        "social media strategy",
+        "pay-per-click advertising",
+        "email marketing campaigns",
+        "influencer partnerships",
+        "web analytics",
+        "conversion rate optimization",
+        "brand management",
+        "digital advertising",
+        "customer engagement",
+        "lead generation",
+        "online reputation management",
+        "mobile marketing",
+        "video marketing"
+      ]
+    },
+    "sports tech": {
+      "naics_prefixes": [
+        "5415"
+      ],
+      "keywords": [
+        "wearable technology",
+        "performance analytics",
+        "sports data management",
+        "fan engagement platforms",
+        "eSports solutions",
+        "athlete tracking systems",
+        "virtual coaching",
+        "sports broadcasting technology",
+        "fitness apps",
+        "revenue optimization",
+        "ticketing solutions",
+        "sponsorship analytics",
+        "game strategy software",
+        "sports injury prevention",
+        "training management systems"
+      ]
+    },
+    "food delivery": {
+      "naics_prefixes": [
+        "7223"
+      ],
+      "keywords": [
+        "on-demand delivery",
+        "meal kits",
+        "restaurant partnerships",
+        "last-mile logistics",
+        "customer satisfaction",
+        "mobile ordering",
+        "subscription services",
+        "food safety compliance",
+        "delivery tracking",
+        "menu optimization",
+        "local sourcing",
+        "promotional campaigns",
+        "user experience design",
+        "driver management",
+        "order fulfillment"
+      ]
+    },
+    "grocery": {
+      "naics_prefixes": [
+        "4451"
+      ],
+      "keywords": [
+        "fresh produce",
+        "supply chain management",
+        "private label products",
+        "inventory control",
+        "customer loyalty programs",
+        "online grocery shopping",
+        "local farmers",
+        "organic products",
+        "meal planning",
+        "store layout design",
+        "promotional pricing",
+        "checkout technology",
+        "sustainability initiatives",
+        "food waste reduction",
+        "community engagement"
+      ]
+    },
+    "pet care": {
+      "naics_prefixes": [
+        "8129"
+      ],
+      "keywords": [
+        "pet grooming services",
+        "pet boarding facilities",
+        "veterinary care",
+        "pet nutrition",
+        "dog training programs",
+        "pet adoption services",
+        "pet supplies retail",
+        "animal behavior consulting",
+        "pet insurance",
+        "mobile pet care",
+        "pet wellness products",
+        "pet-friendly travel",
+        "canine enrichment",
+        "feline behavior",
+        "pet photography"
+      ]
+    },
+    "fitness": {
+      "naics_prefixes": [
+        "7139"
+      ],
+      "keywords": [
+        "personal training",
+        "group fitness classes",
+        "nutrition coaching",
+        "fitness assessments",
+        "wellness programs",
+        "exercise equipment sales",
+        "fitness technology",
+        "corporate wellness",
+        "community fitness events",
+        "online training platforms",
+        "fitness challenges",
+        "rehabilitation services",
+        "sports performance training",
+        "yoga and pilates",
+        "fitness certifications"
+      ]
+    },
+    "wellness": {
+      "naics_prefixes": [
+        "6213"
+      ],
+      "keywords": [
+        "holistic health",
+        "mental wellness",
+        "stress management",
+        "wellness retreats",
+        "alternative therapies",
+        "nutrition counseling",
+        "mindfulness practices",
+        "wellness coaching",
+        "fitness integration",
+        "health assessments",
+        "wellness technology",
+        "community health programs",
+        "preventive care",
+        "self-care strategies",
+        "wellness workshops"
+      ]
+    }
+  }
+}

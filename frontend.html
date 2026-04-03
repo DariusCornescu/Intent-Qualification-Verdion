@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Company Qualifier</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0a; --bg1: #0d0d0d; --bg2: #111111; --bg3: #1a1a1a;
+    --border: #222222; --dim: #444444; --text: #888888; --bright: #cccccc;
+    --accent: #00ff9f; --blue: #00aaff; --orange: #ff6600;
+    --purple: #aa44ff; --pink: #ff4488; --warn: #ffaa00; --err: #ff4444;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--bg); color:var(--text);
+    font-family:'JetBrains Mono','Cascadia Code','Fira Code',monospace;
+    font-size:12.5px; line-height:1.5; height:100vh; overflow:hidden;
+  }
+  #root { height:100vh; display:flex; flex-direction:column; }
+
+  /* ── Header ── */
+  .hdr { background:var(--bg2); border-bottom:1px solid var(--border); padding:6px 16px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+  .hdr-title { color:var(--accent); font-weight:700; font-size:13px; letter-spacing:1px; }
+  .hdr-right { display:flex; align-items:center; gap:16px; }
+  .hdr-stat { color:var(--dim); font-size:11px; }
+  .hdr-stat .on { color:var(--accent); } .hdr-stat .off { color:var(--warn); }
+
+  /* ── Query Bar ── */
+  .qbar { background:var(--bg2); border-bottom:1px solid var(--border); padding:8px 16px; display:flex; align-items:center; gap:8px; flex-shrink:0; }
+  .qbar-prompt { color:var(--accent); font-weight:700; }
+  .qbar-input { flex:1; background:var(--bg); border:1px solid var(--border); border-radius:3px; padding:7px 10px; color:var(--accent); font-family:inherit; font-size:12.5px; outline:none; }
+  .qbar-input:focus { border-color:var(--accent); }
+  .qbar-input::placeholder { color:var(--dim); }
+  .qbar-btn { background:var(--accent); color:var(--bg); border:none; padding:7px 16px; border-radius:3px; font-family:inherit; font-weight:700; font-size:11px; cursor:pointer; letter-spacing:1px; }
+  .qbar-btn:hover { opacity:.85; } .qbar-btn:disabled { opacity:.35; cursor:not-allowed; }
+  .qbar-clear { background:none; border:1px solid var(--border); color:var(--dim); padding:7px 12px; border-radius:3px; font-family:inherit; font-size:11px; cursor:pointer; letter-spacing:1px; }
+  .qbar-clear:hover { border-color:var(--dim); color:var(--text); }
+
+  /* ── Main Layout ── */
+  .main { flex:1; display:grid; grid-template-columns:1fr 1fr; overflow:hidden; }
+  .panel { display:flex; flex-direction:column; overflow:hidden; }
+  .panel + .panel { border-left:1px solid var(--border); }
+  .panel-hdr { background:var(--bg2); padding:5px 12px; border-bottom:1px solid var(--border); color:var(--dim); font-weight:500; font-size:10px; letter-spacing:2px; text-transform:uppercase; flex-shrink:0; display:flex; justify-content:space-between; align-items:center; }
+  .panel-body { flex:1; overflow-y:auto; padding:0; background:var(--bg1); }
+  .panel-body::-webkit-scrollbar { width:5px; }
+  .panel-body::-webkit-scrollbar-track { background:var(--bg1); }
+  .panel-body::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+
+  /* ── Terminal Log ── */
+  .term { padding:8px 10px; }
+  .t { padding:0; white-space:pre-wrap; word-break:break-word; font-size:12px; line-height:1.55; }
+  .t-sep { color:#1a1a1a; }
+  .t-hdr { color:var(--accent); font-weight:700; }
+  .t-dim { color:var(--dim); }
+  .t-info { color:var(--text); }
+  .t-val { color:var(--bright); }
+  .t-s0 { color:var(--blue); font-weight:700; }
+  .t-s1 { color:var(--orange); font-weight:700; }
+  .t-s2 { color:var(--purple); font-weight:700; }
+  .t-s3 { color:var(--pink); font-weight:700; }
+  .t-warn { color:var(--warn); }
+  .t-err { color:var(--err); font-weight:700; }
+  .t-ok { color:var(--accent); font-weight:700; }
+
+  /* Compiled query box */
+  .cq { margin:6px 0; border:1px solid var(--border); background:var(--bg); border-radius:3px; }
+  .cq-top { background:var(--bg3); padding:4px 10px; border-bottom:1px solid var(--border); color:var(--bright); font-weight:700; font-size:11px; letter-spacing:1px; }
+  .cq-row { padding:1px 10px; font-size:11.5px; }
+  .cq-section { padding:3px 10px; color:var(--dim); font-size:10px; letter-spacing:1px; text-transform:uppercase; border-top:1px solid #181818; margin-top:2px; }
+  .cq-filter { color:var(--orange); }
+  .cq-kw { color:var(--purple); }
+  .cq-tree { color:var(--blue); }
+  .cq-none { color:var(--dim); font-style:italic; }
+
+  /* ── Results table ── */
+  .rtbl { width:100%; border-collapse:collapse; }
+  .rtbl th { text-align:left; padding:5px 8px; color:var(--accent); font-weight:500; font-size:10px; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg1); z-index:1; }
+  .rtbl td { padding:5px 8px; border-bottom:1px solid #141414; vertical-align:top; }
+  .rtbl tr { cursor:pointer; transition:background .12s; }
+  .rtbl tr:hover { background:#0f1f0f; }
+  .sc-h { color:var(--accent); font-weight:700; } .sc-m { color:var(--warn); } .sc-l { color:var(--dim); }
+  .cname { color:var(--bright); font-weight:500; }
+  .stag { display:inline-block; padding:1px 5px; border-radius:2px; font-size:10px; }
+  .stag-hard_filter { background:#1a1500; color:var(--orange); }
+  .stag-soft_score { background:#150025; color:var(--purple); }
+  .stag-llm_qualified { background:#1a0020; color:var(--pink); }
+  .loc { color:var(--dim); font-size:11.5px; }
+
+  /* ── Detail Modal ── */
+  .moverlay { position:fixed; inset:0; background:rgba(0,0,0,.75); display:flex; align-items:center; justify-content:center; z-index:100; animation:fi .12s ease; }
+  @keyframes fi { from{opacity:0} to{opacity:1} }
+  .modal { background:var(--bg2); border:1px solid var(--accent); border-radius:5px; width:660px; max-height:85vh; overflow-y:auto; padding:18px 22px; box-shadow:0 0 40px rgba(0,255,159,.07); }
+  .modal::-webkit-scrollbar { width:5px; } .modal::-webkit-scrollbar-track { background:var(--bg2); } .modal::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+  .m-title { color:var(--accent); font-weight:700; font-size:15px; margin-bottom:14px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+  .m-row { display:flex; padding:2px 0; } .m-lbl { color:var(--dim); width:100px; flex-shrink:0; text-align:right; padding-right:10px; } .m-val { color:var(--bright); }
+  .m-sec { color:var(--dim); font-size:10px; letter-spacing:1px; text-transform:uppercase; margin-top:12px; margin-bottom:4px; padding-top:6px; border-top:1px solid #1a1a1a; }
+  .m-desc { color:var(--text); line-height:1.6; }
+  .m-scroll { max-height:140px; overflow-y:auto; padding-right:4px; }
+  .m-scroll::-webkit-scrollbar { width:3px; } .m-scroll::-webkit-scrollbar-track { background:transparent; } .m-scroll::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+  .m-tag { display:inline-block; background:var(--bg); color:var(--text); padding:1px 7px; border-radius:2px; margin:2px 3px 2px 0; font-size:10.5px; }
+  .m-tags-scroll { max-height:70px; overflow-y:auto; padding-right:4px; }
+  .m-tags-scroll::-webkit-scrollbar { width:3px; } .m-tags-scroll::-webkit-scrollbar-track { background:transparent; } .m-tags-scroll::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+  .m-close { color:var(--dim); font-size:10px; margin-top:14px; text-align:center; }
+  .m-close kbd { background:var(--bg); padding:1px 5px; border-radius:2px; border:1px solid var(--border); }
+  .m-llm-card { margin-top:12px; padding:10px 14px; border-radius:4px; border-left:3px solid var(--pink); background:rgba(170,50,100,.08); }
+  .m-llm-title { color:var(--pink); font-size:10px; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; display:flex; align-items:center; gap:6px; }
+  .m-llm-title::before { content:'◆'; font-size:7px; }
+  .m-llm-body { color:#cc88cc; line-height:1.6; }
+  .m-stage-badge { display:inline-block; padding:2px 8px; border-radius:3px; font-size:10px; font-weight:600; letter-spacing:0.5px; }
+  .m-stage-badge.hard_filter { background:#0a1a10; color:var(--accent); }
+  .m-stage-badge.soft_score { background:#150025; color:var(--purple); }
+  .m-stage-badge.llm_qualified { background:#1a0020; color:var(--pink); border:1px solid rgba(170,50,100,.3); }
+  .m-stage-badge.soft_score_fallback { background:#1a1500; color:var(--warn); }
+
+  /* ── Warning Banner ── */
+  .banner { background:#1a1200; border-bottom:2px solid var(--warn); padding:12px 20px; flex-shrink:0; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .banner-body { flex:1; }
+  .banner-title { color:var(--warn); font-weight:700; font-size:12px; margin-bottom:4px; }
+  .banner-text { color:var(--dim); font-size:11px; line-height:1.6; }
+  .banner-text code { background:var(--bg); padding:1px 5px; border-radius:2px; color:var(--bright); }
+  .banner-actions { display:flex; gap:8px; flex-shrink:0; }
+  .banner-btn { padding:6px 14px; border-radius:3px; font-family:inherit; font-weight:700; font-size:10px; cursor:pointer; letter-spacing:1px; border:none; }
+  .banner-btn-demo { background:var(--accent); color:var(--bg); }
+  .banner-btn-demo:hover { opacity:.85; }
+  .banner-btn-dismiss { background:none; border:1px solid var(--border); color:var(--dim); }
+  .banner-btn-dismiss:hover { border-color:var(--dim); color:var(--text); }
+
+  .spinner { display:inline-block; width:11px; height:11px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:sp .5s linear infinite; margin-right:5px; vertical-align:middle; }
+  @keyframes sp { to{transform:rotate(360deg)} }
+  .empty { display:flex; align-items:center; justify-content:center; height:100%; color:var(--dim); font-size:11.5px; text-align:center; padding:20px; line-height:2; }
+  .footer { background:var(--bg2); border-top:1px solid var(--border); padding:3px 16px; color:var(--dim); font-size:10px; display:flex; justify-content:space-between; flex-shrink:0; }
+
+  /* ── History Sidebar ── */
+  .sidebar { position:fixed; top:0; left:0; bottom:0; width:280px; background:var(--bg2); border-right:1px solid var(--border); z-index:90; transform:translateX(-100%); transition:transform .2s ease; display:flex; flex-direction:column; }
+  .sidebar.open { transform:translateX(0); }
+  .sidebar-hdr { padding:10px 14px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-shrink:0; }
+  .sidebar-title { color:var(--accent); font-weight:700; font-size:11px; letter-spacing:1px; }
+  .sidebar-close { background:none; border:none; color:var(--dim); font-size:16px; cursor:pointer; padding:0 4px; font-family:inherit; }
+  .sidebar-close:hover { color:var(--text); }
+  .sidebar-body { flex:1; overflow-y:auto; }
+  .sidebar-body::-webkit-scrollbar { width:4px; }
+  .sidebar-body::-webkit-scrollbar-track { background:var(--bg2); }
+  .sidebar-body::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+  .sidebar-empty { color:var(--dim); font-size:11px; text-align:center; padding:30px 14px; line-height:1.8; }
+  .sidebar-item { padding:8px 14px; border-bottom:1px solid #181818; cursor:pointer; transition:background .12s; }
+  .sidebar-item:hover { background:var(--bg3); }
+  .sidebar-item-q { color:var(--bright); font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:3px; }
+  .sidebar-item-meta { color:var(--dim); font-size:9.5px; display:flex; gap:8px; }
+  .sidebar-item-meta .accent { color:var(--accent); }
+  .sidebar-footer { padding:8px 14px; border-top:1px solid var(--border); flex-shrink:0; }
+  .sidebar-clear { width:100%; background:none; border:1px solid var(--border); color:var(--dim); padding:5px; border-radius:3px; font-family:inherit; font-size:10px; cursor:pointer; letter-spacing:1px; }
+  .sidebar-clear:hover { border-color:var(--dim); color:var(--text); }
+  .sidebar-tab { position:fixed; left:0; top:50%; transform:translateY(-50%); z-index:89; background:var(--bg3); border:1px solid var(--accent); border-left:2px solid var(--accent); border-radius:0 5px 5px 0; padding:12px 6px; cursor:pointer; color:var(--accent); font-size:10px; writing-mode:vertical-rl; text-orientation:upright; letter-spacing:1.5px; font-family:inherit; font-weight:700; box-shadow:0 0 8px rgba(0,255,159,.1); }
+  .sidebar-tab:hover { background:var(--bg2); box-shadow:0 0 14px rgba(0,255,159,.2); }
+  .sidebar-overlay { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:88; }
+
+  /* ── Batch Mode ── */
+  .mode-toggle { display:flex; border:1px solid var(--border); border-radius:3px; overflow:hidden; flex-shrink:0; }
+  .mode-btn { background:none; border:none; padding:6px 12px; color:var(--dim); font-family:inherit; font-size:10px; font-weight:700; letter-spacing:1px; cursor:pointer; transition:all .15s; }
+  .mode-btn:hover { color:var(--text); }
+  .mode-btn.active { background:var(--accent); color:var(--bg); }
+  .batch-textarea { flex:1; background:var(--bg); border:1px solid var(--border); border-radius:3px; padding:7px 10px; color:var(--accent); font-family:inherit; font-size:12px; outline:none; resize:vertical; min-height:34px; max-height:200px; line-height:1.5; }
+  .batch-textarea:focus { border-color:var(--accent); }
+  .batch-textarea::placeholder { color:var(--dim); }
+  .batch-info { color:var(--dim); font-size:10px; white-space:nowrap; flex-shrink:0; letter-spacing:0.5px; }
+  .batch-progress { margin:0 8px 0 0; padding:4px 10px; background:var(--bg3); border:1px solid var(--border); border-radius:3px; color:var(--text); font-size:10px; font-family:inherit; flex-shrink:0; }
+  .batch-progress .cur { color:var(--accent); font-weight:700; }
+
+  /* Batch results grouped */
+  .batch-group { border-bottom:1px solid var(--border); }
+  .batch-group-hdr { padding:8px 12px; background:var(--bg2); border-bottom:1px solid var(--border); cursor:pointer; display:flex; align-items:center; gap:8px; transition:background .12s; }
+  .batch-group-hdr:hover { background:var(--bg3); }
+  .batch-group-arrow { color:var(--accent); font-size:10px; transition:transform .15s; flex-shrink:0; }
+  .batch-group-arrow.open { transform:rotate(90deg); }
+  .batch-group-query { color:var(--bright); font-size:11.5px; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .batch-group-meta { display:flex; gap:10px; flex-shrink:0; }
+  .batch-group-meta span { font-size:10px; color:var(--dim); }
+  .batch-group-meta .count { color:var(--accent); }
+  .batch-group-meta .time { color:var(--dim); }
+  .batch-group-meta .err { color:var(--err); }
+  .batch-group-body { display:none; }
+  .batch-group-body.open { display:block; }
+  .batch-load-examples { background:none; border:1px solid var(--border); color:var(--dim); padding:6px 10px; border-radius:3px; font-family:inherit; font-size:10px; cursor:pointer; letter-spacing:0.5px; flex-shrink:0; }
+  .batch-load-examples:hover { border-color:var(--dim); color:var(--text); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+function fmtNum(n) { return n == null ? '—' : n.toLocaleString(); }
+function fmtRev(n) { if(n==null) return '—'; if(n>=1e9) return `$${(n/1e9).toFixed(1)}B`; if(n>=1e6) return `$${(n/1e6).toFixed(1)}M`; return `$${n.toLocaleString()}`; }
+function sc(s) { return s>=.7?'sc-h':s>=.4?'sc-m':'sc-l'; }
+
+/* ── Example Queries for Batch Mode ── */
+const EXAMPLE_QUERIES = [
+  "Public software companies with more than 1,000 employees",
+  "Pharmaceutical companies in Switzerland",
+  "B2B SaaS companies providing HR solutions in Europe",
+  "Fast-growing fintech companies competing with traditional banks in Europe",
+  "Companies that could supply packaging materials for a direct-to-consumer cosmetics brand",
+  "E-commerce platforms in Southeast Asia handling cross-border logistics",
+  "Renewable energy companies in Scandinavia with government contracts",
+  "Companies that manufacture or supply critical components for electric vehicle battery production outside of China",
+  "Logistics companies in Germany with revenue over $50 million",
+  "AI startups in North America focused on healthcare diagnostics",
+  "Private cybersecurity companies founded after 2015 with fewer than 500 employees",
+  "Agricultural technology companies in South America or Sub-Saharan Africa",
+];
+
+/* ── Demo Data (real companies from dataset) ── */
+const DEMO_DATA = {
+  query: "Companies that manufacture or supply critical components for electric vehicle battery production outside of China",
+  compiled: {
+    original_query: "Companies that manufacture or supply critical components for electric vehicle battery production outside of China",
+    complexity: "complex",
+    confidence: 0.6,
+    hard_filters: [
+      { field: "NAICS prefix", op: "IN", value: ["3359"] },
+      { field: "location", op: "NOT IN", value: ["China"] }
+    ],
+    semantic: {
+      industry: ["battery testing and certification","solid-state batteries","automotive electronics","automotive manufacturing","grid energy storage"],
+      biz_model: ["manufacturer"],
+      products: ["battery cells","cathode materials","electrolyte separators","lithium-ion batteries","solid-state batteries"]
+    },
+    match_trees: [{ type: "node", operator: "OR", operands: [
+      { type: "node", operator: "OR", operands: [
+        { type: "leaf", value: "battery testing and certification" },
+        { type: "leaf", value: "solid-state batteries" },
+        { type: "leaf", value: "automotive electronics" },
+        { type: "leaf", value: "automotive manufacturing" }
+      ]},
+      { type: "node", operator: "AND", operands: [
+        { type: "node", operator: "OR", operands: [
+          { type: "leaf", value: "supply" },
+          { type: "leaf", value: "manufacture" },
+          { type: "leaf", value: "automotive" },
+          { type: "leaf", value: "battery" }
+        ]},
+        { type: "node", operator: "OR", operands: [
+          { type: "leaf", value: "energy" },
+          { type: "leaf", value: "solutions" },
+          { type: "leaf", value: "services" },
+          { type: "leaf", value: "management" }
+        ]}
+      ]}
+    ]}],
+    naics_was_relaxed: false
+  },
+  pipeline_trace: [
+    { stage: "stage_0", action: "start", detail: "query: \"Companies that manufacture or supply critical components for electric vehicle battery production outside of China\"" },
+    { stage: "stage_0", action: "path", detail: "LLM-first" },
+    { stage: "stage_0", action: "llm_extract", detail: "success (5192ms)" },
+    { stage: "stage_0", action: "negation", detail: "excluded locations: ['China']" },
+    { stage: "stage_0", action: "regex_validate", detail: "all numerics confirmed" },
+    { stage: "stage_0", action: "naics_source", detail: "from query text: ['battery'] -> 1 codes" },
+    { stage: "stage_0", action: "industry", detail: "5 LLM terms -> 32 keywords, 1 NAICS codes" },
+    { stage: "stage_0", action: "biz_model", detail: "['manufacturer']" },
+    { stage: "stage_0", action: "match_tree", detail: "1 expression(s)" },
+    { stage: "stage_0", action: "complexity_check", detail: "LLM classification 'complex' confirmed" },
+    { stage: "stage_0", action: "assessment", detail: "complexity=complex, confidence=0.60" }
+  ],
+  stages: [
+    { stage: 0, label: "Query Analysis", status: "done", complexity: "complex", confidence: 0.6 },
+    { stage: 1, label: "Hard Filters", status: "done", input_count: 477, output_count: 36, filter_rate: 92.5 },
+    { stage: 2, label: "Soft Scoring", status: "done", input_count: 36, scored_count: 30, above_threshold: 30,
+      top3: [
+        { name: "Greenbatt Technology", score: 0.989 },
+        { name: "Rusaccum", score: 0.967 },
+        { name: "QuantumScape", score: 0.906 }
+      ], naics_was_relaxed: false, force_llm: false, top_score: 0.989 },
+    { stage: 3, label: "LLM Qualification", status: "done", input_count: 30, qualified_count: 15, total_evaluated: 30, forced: false, reason: "complex query" }
+  ],
+  results: [
+    { name:"QuantumScape", score:0.937, stage:"llm_qualified", qualified:true, reasoning:"QuantumScape is a leading developer of solid-state lithium-metal batteries for electric vehicles. Their core technology\u2014solid-ceramic electrolyte separators and anode-less cell design\u2014directly targets EV battery production. Based in the US, not China. Strong match.", website:"quantumscape.com", address:"San Jose, California", country_code:"us", year_founded:2010, employee_count:850, revenue:568156574, is_public:true, naics:"335910 \u2014 Battery Manufacturing", description:"QuantumScape Battery, Inc. is an American electronics manufacturer and technology company engaged in the development and production of solid-state lithium-metal batteries for electric vehicles and energy storage.", business_model:["Business-to-Business","Enterprise","Manufacturing"], target_markets:["Energy","Automotive"], core_offerings:["Battery Energy Density Enhancement","Anode-Less Battery Cell Design","Solid-Ceramic Electrolyte Separator Development","Battery Charging Speed Optimization"] },
+    { name:"Greenbatt Technology", score:0.927, stage:"llm_qualified", qualified:true, reasoning:"Swiss battery manufacturer focused on lithium-ion and solid-state battery cells. Directly manufactures critical EV battery components. Located in Switzerland, outside China. Strong match.", website:"greenbatt.ch", address:"Baar, Zug", country_code:"ch", year_founded:2017, employee_count:null, revenue:null, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Greenbatt Technology Holding AG is a Swiss company engaged in battery technology, with a focus on lithium-ion and solid-state batteries. The company develops and manufactures battery cells using thick-layer technology.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Consumer Electronics","Renewable Energy","Automotive"], core_offerings:["Battery Technology R&D","Lithium-Ion Battery Manufacturing","Solid-State Battery Manufacturing","Renewable Energy Storage Battery Supply"] },
+    { name:"Rusaccum", score:0.885, stage:"llm_qualified", qualified:true, reasoning:"Russian solid-state battery developer focused on lithium-ion and solid-state technologies for EVs. Manufactures battery cells and materials. Outside China. Good match.", website:"rusaccum.ru", address:"Saint Petersburg, Saint Petersburg", country_code:"ru", year_founded:2021, employee_count:null, revenue:5610317, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Rusaccum is a Russian company specialized in the development of solid-state batteries, with a focus on lithium-ion batteries and solid-state electrolyte technology for electric vehicles and energy storage.", business_model:["Business-to-Business","Enterprise","Manufacturing"], target_markets:["Energy","Energy Storage","Automotive"], core_offerings:["Lithium-Ion Battery Cell Manufacturing","Electrochemical Battery Testing","Solid-State Lithium Source Production","EV Battery Solutions"] },
+    { name:"Nascent Materials", score:0.873, stage:"llm_qualified", qualified:true, reasoning:"American manufacturer of cathode materials (LFP and LMFP) for lithium-ion batteries. Directly supplies critical battery components for EV production. US-based, not China. Strong match.", website:"nascentmaterials.com", address:"Newark, New Jersey", country_code:"us", year_founded:null, employee_count:2, revenue:30370795, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Nascent Materials Inc. is an American company engaged in the development and manufacturing of cathode materials for lithium-ion batteries, with a focus on lithium iron phosphate (LFP) and lithium manganese iron phosphate (LMFP).", business_model:["Business-to-Business","Manufacturing"], target_markets:["Grid Storage","Aviation","Energy","Automotive"], core_offerings:["EV Battery Material Supply","Cathode Material Manufacturing","LFP Cathode Manufacturing","Battery Materials Commercialization"] },
+    { name:"CIDEcell", score:0.839, stage:"llm_qualified", qualified:true, reasoning:"Spanish manufacturer of customized electrodes and cells for lithium-ion, solid-state, sodium-ion and lithium-sulphur batteries. Produces critical EV battery components. Based in Spain. Match.", website:"cidecell.com", address:"San Sebasti\u00e1n, Basque Country", country_code:"es", year_founded:null, employee_count:null, revenue:10648441, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"CIDEcell is a Spanish manufacturer specialized in the production of customized electrodes and cells for lithium-ion batteries, solid-state batteries, sodium-ion batteries, and lithium-sulphur batteries.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Aerospace","Automotive","Renewable Energy","Marine"], core_offerings:["Battery Material R&D","Battery Component Assembly","High Nickel Cathode Development","Silicon Anode Material Development"] },
+    { name:"NexTech Batteries", score:0.821, stage:"llm_qualified", qualified:true, reasoning:"American lithium-sulfur battery developer and manufacturer. Produces battery cells, separators, and management systems for EVs. US-based. Good match.", website:"nextechbatteries.com", address:"Carson City, Nevada", country_code:"us", year_founded:2016, employee_count:9, revenue:43479170, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"NexTech Batteries, Inc. is an American private company engaged in the development and commercialization of lithium-sulfur battery technology for electric vehicles and consumer electronics.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Consumer Electronics","Renewable Energy","Automotive"], core_offerings:["Coated Separator Development","Lithium-Sulfur Battery Development","Battery Management System Development","Pouch Cell Fabrication"] },
+    { name:"Solid Power", score:0.815, stage:"llm_qualified", qualified:true, reasoning:"American all-solid-state battery technology developer. Provides battery cell technology and sulfide-based electrolyte materials to automotive OEMs. Directly relevant to EV battery production. US-based.", website:"solidpowerbattery.com", address:"Louisville, Colorado", country_code:"us", year_founded:null, employee_count:206, revenue:85415079, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Solid Power Inc. is an American company specialized in the development of all-solid-state battery technology. The company provides battery cell technology to partners and sells sulfide-based electrolyte materials.", business_model:["Business-to-Business","Enterprise","Manufacturing"], target_markets:["Energy","Automotive"], core_offerings:["Battery Cell Testing and Research","Battery Materials Innovation","All-Solid-State Battery Technology","EV Cell Manufacturing"] },
+    { name:"Charge CCCV", score:0.808, stage:"llm_qualified", qualified:true, reasoning:"American lithium-ion battery IP and manufacturing company (C4V). Develops next-gen battery technologies including solid-state. Supplies critical components for EV and energy storage. US-based.", website:"chargecccv.com", address:"Binghamton, New York", country_code:"us", year_founded:2013, employee_count:45, revenue:37811839, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Charge CCCV (C4V) is an American company engaged in lithium-ion battery composition and manufacture, with a focus on next-generation battery technologies for electric mobility and energy storage.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Energy","Aerospace","Automotive"], core_offerings:["Battery Material Supply Chain Management","Sustainable Battery Process Development","Electric Mobility Battery Solutions","Battery Commercialization"] },
+    { name:"Sili Energy", score:0.799, stage:"llm_qualified", qualified:true, reasoning:"South Korean manufacturer of silicon and lithium-based cathode materials for secondary batteries. Supplies critical materials for EV battery production. Based in South Korea, not China.", website:"silienergy.kr", address:"Daejeon, Daejeon", country_code:"kr", year_founded:null, employee_count:null, revenue:null, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Sili Energy Co., Ltd. is a South Korean company engaged in the development and manufacturing of secondary battery cathode materials, including silicon and lithium-based materials for EV batteries.", business_model:["Service Provider","Business-to-Business","Manufacturing"], target_markets:["Energy","Automotive"], core_offerings:["Silicon Cathode Material Manufacturing","Battery Material R&D","Battery Capacity Enhancement","EV Charging Speed Improvement"] },
+    { name:"SolidEdge Solution", score:0.784, stage:"llm_qualified", qualified:true, reasoning:"Taiwanese manufacturer of solid-state lithium battery materials and components, including solid electrolyte films and silicon carbon cathodes. Critical EV battery component supplier. Outside China.", website:"solidedgesolution.com", address:"Hsinchu, Hsinchu", country_code:"tw", year_founded:2021, employee_count:17, revenue:18333244, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"SolidEdge Solution is a Taiwanese company engaged in the development and manufacturing of solid-state lithium battery materials and components, including solid electrolyte films.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Energy","Automotive"], core_offerings:["Silicon Carbon Cathode Manufacturing","High Voltage Cathode Manufacturing","Solid Electrolyte Film Manufacturing","Solid-State Lithium Battery Manufacturing"] },
+    { name:"Sepion Technologies", score:0.781, stage:"llm_qualified", qualified:true, reasoning:"American manufacturer of lithium-ion and lithium-metal battery separators. Separators are critical battery components. US-based, directly relevant to EV battery supply chain.", website:"sepiontechnologies.com", address:"Alameda, California", country_code:"us", year_founded:null, employee_count:23, revenue:33407512, is_public:false, naics:"335999 \u2014 All Other Misc. Electrical Equipment Manufacturing", description:"Sepion Technologies, Inc. is a US company engaged in materials solutions for the electrify-everything revolution, with a focus on lithium-ion and lithium-metal battery separators.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Energy","Automotive"], core_offerings:["Lithium-Metal Battery Separator Manufacturing","Lithium-Ion Battery Separator Manufacturing","Coated Separator Technology","ML-Driven Materials Discovery"] },
+    { name:"Mitra Chem", score:0.761, stage:"llm_qualified", qualified:true, reasoning:"American manufacturer of iron-based cathode materials (LFP+) for lithium-ion batteries. Cathode materials are critical EV battery components. Mountain View, CA. Strong match.", website:"mitrachem.com", address:"Mountain View, California", country_code:"us", year_founded:2021, employee_count:60, revenue:10152175, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Mitra Chem Incorporated is an American company engaged in the development and manufacturing of lithium-ion battery materials, with a focus on iron-based cathode materials for EV and energy storage.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Energy","Renewable Energy","Automotive"], core_offerings:["Iron-Based Cathode Materials Manufacturing","LFP+ Cathode Manufacturing","Battery Materials Commercialization","Battery Materials R&D"] },
+    { name:"Nuvvon", score:0.757, stage:"llm_qualified", qualified:true, reasoning:"American solid-state lithium metal battery developer using solid polymer electrolyte technology. Produces critical next-gen EV battery technology. New Jersey-based.", website:"nuvvon.com", address:"Parsippany-Troy Hills, New Jersey", country_code:"us", year_founded:2022, employee_count:9, revenue:30370795, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Nuvvon Inc. is an American company engaged in the development, scale-up, and commercialization of solid-state lithium metal batteries using solid polymer electrolyte technology.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Energy Storage"], core_offerings:["Solid-State Lithium Metal Battery Development","Polymer Electrolyte Technology","Energy Storage Solutions","Flexible Battery Manufacturing"] },
+    { name:"ReFire_ev", score:0.735, stage:"llm_qualified", qualified:true, reasoning:"Indian company specializing in EV charging infrastructure and lithium-ion battery technology. Manufactures and distributes EV batteries. Based in India, outside China.", website:null, address:"New Delhi, Delhi", country_code:"in", year_founded:null, employee_count:null, revenue:null, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"ReFire_ev is an Indian company specializing in the development and supply of electric vehicle charging infrastructure and lithium-ion battery technology for the automotive sector.", business_model:["Business-to-Business","Manufacturing","Wholesale"], target_markets:["Energy","Automotive"], core_offerings:["EV Charging Infrastructure Supply","EV Lithium Ion Battery Distribution","EV Battery Manufacturing","EV Charging Infrastructure Development"] },
+    { name:"Zakuro", score:0.724, stage:"llm_qualified", qualified:true, reasoning:"American solid-state lithium battery developer focused on lithium metal anode technology for EVs and energy storage. Ann Arbor, Michigan. Outside China. Match.", website:"zakurobattery.com", address:"Ann Arbor, Michigan", country_code:"us", year_founded:null, employee_count:3, revenue:23290678, is_public:false, naics:"335910 \u2014 Battery Manufacturing", description:"Zakuro, Inc. is an American company engaged in the development and manufacturing of solid-state lithium batteries, with a focus on lithium metal anode technologies for EV and energy storage.", business_model:["Business-to-Business","Manufacturing"], target_markets:["Consumer Electronics","Energy","Automotive"], core_offerings:["Lithium Metal Anode Technology","Solid-State Lithium Battery Development","Automotive Battery Solutions","Energy Storage Solutions"] }
+  ],
+  elapsed: 7.823
+};
+
+/* ── Match Tree Renderer ── */
+function renderTree(node, depth=0) {
+  const pad = '      ' + '  '.repeat(depth);
+  if (node.type === 'leaf') return `${pad}"${node.value}"`;
+  const op = node.operator;
+  const children = (node.operands||[]);
+  // compact if all leaves
+  if (children.every(c => c.type === 'leaf')) {
+    const vals = children.map(c => c.value);
+    if (vals.length <= 4) return `${pad}${op}(${vals.join(', ')})`;
+    return `${pad}${op}(${vals.slice(0,4).join(', ')}... +${vals.length-4} more)`;
+  }
+  let lines = [`${pad}${op}(`];
+  for (const c of children) lines.push(renderTree(c, depth+1));
+  lines.push(`${pad})`);
+  return lines.join('\n');
+}
+
+/* ── Compiled Query Component ── */
+function CompiledQuery({ data }) {
+  if (!data) return null;
+  const { original_query, complexity, confidence, hard_filters, semantic, match_trees } = data;
+  return (
+    <div className="cq">
+      <div className="cq-top">COMPILED QUERY</div>
+      <div className="cq-row"><span className="t-dim">Original: </span><span className="t-val">"{original_query}"</span></div>
+      <div className="cq-row"><span className="t-dim">Complexity: </span><span className="t-val">{complexity}</span><span className="t-dim">  |  Confidence: </span><span className="t-val">{confidence}</span></div>
+
+      <div className="cq-section">Hard Filters (Stage 1)</div>
+      {hard_filters.length === 0
+        ? <div className="cq-row cq-none">  (none — all companies pass)</div>
+        : hard_filters.map((f,i) => (
+            <div key={i} className="cq-row cq-filter">
+              {'  '}{f.field} {f.op} {Array.isArray(f.value) ? `[${f.value.join(', ')}]` : String(f.value)}
+            </div>
+          ))
+      }
+
+      {data.naics_was_relaxed && (
+        <div className="cq-row" style={{color:'var(--warn)', padding:'4px 10px', background:'#1a1500', borderTop:'1px solid #332200'}}>
+          ⚠ NAICS industry filter was relaxed (moved to soft scoring — candidates may not match industry)
+        </div>
+      )}
+
+      <div className="cq-section">Semantic Criteria (Stage 2)</div>
+      {Object.keys(semantic).length === 0 && match_trees.length === 0
+        ? <div className="cq-row cq-none">  (none)</div>
+        : <>
+            {Object.entries(semantic).map(([k, v]) => (
+              <div key={k} className="cq-row cq-kw">{'  '}{k}: [{(Array.isArray(v) ? v : [v]).slice(0,6).join(', ')}{v.length > 6 ? `... +${v.length-6} more` : ''}]</div>
+            ))}
+            {match_trees.length > 0 && <>
+              <div className="cq-row t-dim" style={{marginTop:4}}>{'  '}Match expression tree:</div>
+              {match_trees.map((tree,i) => (
+                <div key={i} className="cq-row cq-tree" style={{whiteSpace:'pre'}}>{renderTree(tree)}</div>
+              ))}
+            </>}
+          </>
+      }
+    </div>
+  );
+}
+
+/* ── Pipeline Trace Component ── */
+function PipelineTrace({ steps }) {
+  if (!steps || steps.length === 0) return null;
+  return (
+    <div style={{margin:'4px 0'}}>
+      <div className="t t-dim">  {'─'.repeat(48)}</div>
+      <div className="t t-dim">  Pipeline trace:</div>
+      <div className="t t-dim">  {'─'.repeat(48)}</div>
+      {steps.map((s,i) => (
+        <div key={i} className="t t-info">
+          {'  '}[{(s.stage+'            ').slice(0,12)}] {s.action}{s.detail ? `: ${s.detail}` : ''}
+        </div>
+      ))}
+      <div className="t t-dim">  {'─'.repeat(48)}</div>
+    </div>
+  );
+}
+
+/* ── Detail Modal ── */
+function DetailModal({ c, onClose }) {
+  useEffect(() => { const h = e => { if(e.key==='Escape') onClose(); }; window.addEventListener('keydown',h); return ()=>window.removeEventListener('keydown',h); }, [onClose]);
+  if (!c) return null;
+
+  const stageLabel = {
+    'hard_filter': 'Hard filter match — no scoring needed',
+    'soft_score': 'Qualified by semantic scoring (BM25 + embeddings + RRF)',
+    'llm_qualified': 'Verified by LLM reasoning',
+    'soft_score_fallback': 'LLM unavailable — soft score used as fallback',
+  };
+
+  return (
+    <div className="moverlay" onClick={onClose}>
+      <div className="modal" onClick={e=>e.stopPropagation()}>
+        <div className="m-title">{c.name}</div>
+
+        <div className="m-row"><span className="m-lbl">Score</span><span className={`m-val ${sc(c.score)}`}>{c.score.toFixed(4)}</span></div>
+        <div className="m-row"><span className="m-lbl">Stage</span><span className="m-val"><span className={`m-stage-badge ${c.stage}`}>{c.stage}</span></span></div>
+        <div style={{color:'var(--dim)',fontSize:'10.5px',marginLeft:'110px',marginTop:'2px'}}>{stageLabel[c.stage]||''}</div>
+        <div className="m-row"><span className="m-lbl">Website</span><span className="m-val">{c.website ? <a href={'https://'+c.website} target="_blank" rel="noopener" style={{color:'var(--accent)',textDecoration:'none'}}>{c.website}</a> : '—'}</span></div>
+        <div className="m-row"><span className="m-lbl">Location</span><span className="m-val">{c.address||'—'}{c.country_code ? ` (${c.country_code.toUpperCase()})` : ''}</span></div>
+        <div className="m-row"><span className="m-lbl">Founded</span><span className="m-val">{c.year_founded||'—'}</span></div>
+        <div className="m-row"><span className="m-lbl">Employees</span><span className="m-val">{fmtNum(c.employee_count)}</span></div>
+        <div className="m-row"><span className="m-lbl">Revenue</span><span className="m-val">{fmtRev(c.revenue)}</span></div>
+        <div className="m-row"><span className="m-lbl">Public</span><span className="m-val">{c.is_public===true?'Yes':c.is_public===false?'No':'—'}</span></div>
+        <div className="m-row"><span className="m-lbl">NAICS</span><span className="m-val">{c.naics||'—'}</span></div>
+
+        {c.reasoning && (
+          <div className="m-llm-card">
+            <div className="m-llm-title">LLM qualification reasoning</div>
+            <div className="m-llm-body">{c.reasoning}</div>
+          </div>
+        )}
+
+        {c.description && <>
+          <div className="m-sec">Description</div>
+          <div className="m-scroll"><div className="m-desc">{c.description}</div></div>
+        </>}
+
+        {c.core_offerings?.length>0 && <>
+          <div className="m-sec">Core Offerings</div>
+          <div className="m-tags-scroll">{c.core_offerings.map((o,i)=><span key={i} className="m-tag">{o}</span>)}</div>
+        </>}
+
+        {c.business_model?.length>0 && <>
+          <div className="m-sec">Business Model</div>
+          <div>{c.business_model.map((b,i)=><span key={i} className="m-tag">{b}</span>)}</div>
+        </>}
+
+        {c.target_markets?.length>0 && <>
+          <div className="m-sec">Target Markets</div>
+          <div className="m-tags-scroll">{c.target_markets.map((m,i)=><span key={i} className="m-tag">{m}</span>)}</div>
+        </>}
+
+        <div className="m-close">Press <kbd>ESC</kbd> or click outside to close</div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Main App ── */
+function App() {
+  const [status, setStatus] = useState(null);
+  const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [logEntries, setLogEntries] = useState([]);
+  const [results, setResults] = useState([]);
+  const [noData, setNoData] = useState(null);
+  const [selected, setSelected] = useState(null);
+  const [qCount, setQCount] = useState(0);
+  const [lastTime, setLastTime] = useState(null);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
+  const [history, setHistory] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('cq_history') || '[]'); } catch { return []; }
+  });
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [batchMode, setBatchMode] = useState(false);
+  const [batchText, setBatchText] = useState('');
+  const [batchResults, setBatchResults] = useState([]);   // [{query, data, error}]
+  const [batchProgress, setBatchProgress] = useState(null); // {current, total} or null
+  const [expandedGroups, setExpandedGroups] = useState({}); // {idx: bool}
+  const logEnd = useRef(null);
+  const inputRef = useRef(null);
+
+  const noKey = status && !status.llm_available;
+  const showBanner = noKey && !bannerDismissed;
+
+  useEffect(() => {
+    fetch('/api/status').then(r=>r.json()).then(d => { setStatus(d); }).catch(()=>{});
+  }, []);
+  useEffect(() => { logEnd.current?.scrollIntoView({behavior:'smooth'}); }, [logEntries]);
+
+  const addLog = useCallback((cls, content) => {
+    setLogEntries(p => [...p, { cls, content, id: Date.now()+Math.random() }]);
+  }, []);
+
+  const clearLog = () => { setLogEntries([]); setNoData(null); setResults([]); setBatchResults([]); setBatchProgress(null); };
+
+  /* ── Shared log builder (used by runQuery, loadDemo, restoreFromHistory) ── */
+  const buildLogEntries = useCallback((data, queryText) => {
+    const entries = [];
+    const add = (cls, content) => entries.push({ cls, content, id: Date.now()+Math.random() });
+    const addComp = (component) => entries.push({ component, id: Date.now()+Math.random() });
+
+    add('t-sep', '\u2501'.repeat(55));
+    add('t-hdr', `  \u25b8 Query: "${queryText}"`);
+    add('t-dim', `    Dataset: ${status?.companies||'?'} companies`);
+    add('', '');
+
+    if (data.compiled) addComp(<CompiledQuery data={data.compiled} />);
+    if (data.pipeline_trace?.length > 0) addComp(<PipelineTrace steps={data.pipeline_trace} />);
+    add('', '');
+
+    for (const step of (data.stages || [])) {
+      const cls = `t-s${step.stage}`;
+      const LABELS = ['Query Analysis','Hard Filters','Soft Scoring','LLM Qualification'];
+      const label = LABELS[step.stage] || step.label;
+      add(cls, `  \u250c\u2500 STAGE ${step.stage}: ${label} ${'\u2500'.repeat(Math.max(0, 40-label.length))}`);
+      if (step.status === 'error') {
+        add('t-err', `  \u2502  \u2717 ${step.error}`);
+      } else if (step.stage === 0) {
+        add('t-info', `  \u2502  complexity : ${step.complexity}`);
+        add('t-info', `  \u2502  confidence : ${step.confidence}`);
+      } else if (step.stage === 1) {
+        add('t-info', `  \u2502  ${step.input_count} \u2192 ${step.output_count} companies`);
+        add('t-dim', `  \u2502  filter rate: ${step.filter_rate}% eliminated`);
+      } else if (step.stage === 2) {
+        add('t-info', `  \u2502  scored ${step.input_count} \u2192 top ${step.scored_count}`);
+        add('t-info', `  \u2502  ${step.above_threshold} above threshold`);
+        for (const t of (step.top3||[])) add('t-dim', `  \u2502    [${t.score.toFixed(3)}] ${t.name}`);
+        if (step.naics_was_relaxed) add('t-warn', `  \u2502  \u26a0 NAICS was relaxed \u2014 scores may be unreliable`);
+        if (step.force_llm) add('t-warn', `  \u2502  \u26a1 Forcing LLM verification (top score ${step.top_score?.toFixed(3) || '?'} < threshold)`);
+      } else if (step.stage === 3) {
+        if (step.forced) add('t-warn', `  \u2502  \u26a1 FORCED \u2014 ${step.reason || 'NAICS relaxed + low scores'}`);
+        add('t-info', `  \u2502  ${step.qualified_count}/${step.total_evaluated} qualified by LLM`);
+        if (step.no_data) add('t-err', `  \u2502  \u2717 ${step.no_data_reason || 'LLM rejected all candidates \u2014 no matching data in dataset'}`);
+      }
+      add(cls, `  \u2514${'\u2500'.repeat(48)}`);
+      add('', '');
+    }
+
+    if (data.warning) add('t-warn', `  \u26a0 ${data.warning}`);
+    if (data.note) add('t-info', `  \u25b8 ${data.note}`);
+
+    const rl = data.results || [];
+    if (data.no_data) {
+      add('t-err', `  \u2550\u2550\u2550 NO MATCHING DATA \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550`);
+      add('t-err', `  ${data.no_data_message || 'Dataset does not contain companies matching this query.'}`);
+      add('t-dim', `  ${data.elapsed}s elapsed`);
+    } else {
+      add('t-ok', `  \u2550\u2550\u2550 RESULTS: ${rl.length} qualified  \u2502  ${data.elapsed}s elapsed \u2550\u2550\u2550`);
+      if (rl.length > 0) {
+        const scores = rl.map(r=>r.score);
+        add('t-dim', `      avg: ${(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(3)}  \u2502  max: ${Math.max(...scores).toFixed(3)}  \u2502  min: ${Math.min(...scores).toFixed(3)}`);
+      }
+    }
+    add('', '');
+    return entries;
+  }, [status]);
+
+  const loadDemo = useCallback(() => {
+    const entries = buildLogEntries(DEMO_DATA, DEMO_DATA.query);
+    // Prepend a demo label
+    entries.unshift({ cls: 't-warn', content: '  \u25b8 DEMO MODE \u2014 showing simulated results (no API key)', id: Date.now()+Math.random() });
+    setLogEntries(entries);
+    setResults(DEMO_DATA.results);
+    setNoData(null);
+    setLastTime(DEMO_DATA.elapsed);
+    setQCount(p => p+1);
+    setBannerDismissed(true);
+  }, [buildLogEntries]);
+
+  const saveToHistory = useCallback((queryText, data) => {
+    const rl = data.results || [];
+    const scores = rl.map(r => r.score);
+    const entry = {
+      id: Date.now(),
+      query: queryText,
+      timestamp: new Date().toISOString(),
+      resultCount: rl.length,
+      elapsed: data.elapsed,
+      avgScore: rl.length > 0 ? +(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(3) : 0,
+      data: { compiled: data.compiled, pipeline_trace: data.pipeline_trace, stages: data.stages, results: data.results, elapsed: data.elapsed, no_data: data.no_data, no_data_message: data.no_data_message, warning: data.warning, note: data.note }
+    };
+    setHistory(prev => {
+      const next = [entry, ...prev].slice(0, 20);
+      try { localStorage.setItem('cq_history', JSON.stringify(next)); } catch {}
+      return next;
+    });
+  }, []);
+
+  const restoreFromHistory = useCallback((entry) => {
+    const entries = buildLogEntries(entry.data, entry.query);
+    setLogEntries(entries);
+    setResults(entry.data.results || []);
+    setNoData(entry.data.no_data ? (entry.data.no_data_message || 'Dataset does not contain companies matching this query.') : null);
+    setLastTime(entry.data.elapsed);
+    setSidebarOpen(false);
+  }, [buildLogEntries]);
+
+  const clearHistory = useCallback(() => {
+    setHistory([]);
+    try { localStorage.removeItem('cq_history'); } catch {}
+  }, []);
+
+  const runQuery = useCallback(async () => {
+    if (!query.trim() || loading) return;
+    const q = query.trim();
+    setQuery('');
+    setLoading(true);
+    setResults([]);
+    setNoData(null);
+    setQCount(p => p+1);
+
+    // Show a "running" indicator while waiting
+    addLog('t-sep', '\u2501'.repeat(55));
+    addLog('t-hdr', `  \u25b8 Query: "${q}"`);
+    addLog('t-dim', `    Waiting for response...`);
+
+    try {
+      const resp = await fetch(`/api/query?q=${encodeURIComponent(q)}`);
+      const data = await resp.json();
+
+      // Replace log with full output from buildLogEntries
+      const entries = buildLogEntries(data, q);
+      setLogEntries(entries);
+
+      const rl = data.results || [];
+      setResults(rl);
+      setNoData(data.no_data ? (data.no_data_message || 'Dataset does not contain companies matching this query.') : null);
+      setLastTime(data.elapsed);
+      saveToHistory(q, data);
+    } catch (e) {
+      addLog('t-err', `  \u2717 Request failed: ${e.message}`);
+    } finally {
+      setLoading(false);
+      inputRef.current?.focus();
+    }
+  }, [query, loading, status, addLog, buildLogEntries, saveToHistory]);
+
+  const batchQueries = batchText.split('\n').map(l => l.trim()).filter(Boolean);
+
+  const runBatch = useCallback(async () => {
+    if (batchQueries.length === 0 || loading) return;
+    setLoading(true);
+    setBatchResults([]);
+    setBatchProgress({ current: 0, total: batchQueries.length });
+    setExpandedGroups({});
+    setResults([]);
+    setNoData(null);
+    setLogEntries([]);
+
+    addLog('t-sep', '\u2501'.repeat(55));
+    addLog('t-hdr', `  \u25b8 BATCH MODE: ${batchQueries.length} queries`);
+    addLog('t-dim', `    Processing sequentially...`);
+
+    try {
+      const resp = await fetch('/api/batch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ queries: batchQueries }),
+      });
+      const data = await resp.json();
+
+      if (data.error) {
+        addLog('t-err', `  \u2717 ${data.error}`);
+        setLoading(false);
+        setBatchProgress(null);
+        return;
+      }
+
+      const batchRes = (data.results || []).map((r, i) => ({
+        query: r.query || batchQueries[i],
+        data: r,
+        error: r.error || null,
+      }));
+
+      setBatchResults(batchRes);
+      setBatchProgress(null);
+      setQCount(p => p + batchQueries.length);
+
+      // Build combined log
+      const allEntries = [];
+      allEntries.push({ cls: 't-sep', content: '\u2501'.repeat(55), id: Date.now() });
+      allEntries.push({ cls: 't-hdr', content: `  \u25b8 BATCH COMPLETE: ${batchQueries.length} queries in ${data.total_elapsed}s`, id: Date.now()+1 });
+      allEntries.push({ cls: '', content: '', id: Date.now()+2 });
+
+      batchRes.forEach((br, idx) => {
+        if (br.error && !br.data?.stages) {
+          allEntries.push({ cls: 't-err', content: `  [${idx+1}/${batchRes.length}] "${br.query}" \u2014 ERROR: ${br.error}`, id: Date.now()+idx*100+10 });
+        } else {
+          const entries = buildLogEntries(br.data, br.query);
+          entries.forEach(e => { e.id = Date.now()+idx*100+Math.random(); });
+          // Add query index label
+          allEntries.push({ cls: 't-ok', content: `  \u250c\u2500 QUERY ${idx+1}/${batchRes.length} ${'─'.repeat(40)}`, id: Date.now()+idx*100+3 });
+          allEntries.push(...entries);
+        }
+      });
+
+      allEntries.push({ cls: '', content: '', id: Date.now()+9990 });
+      allEntries.push({ cls: 't-ok', content: `  \u2550\u2550\u2550 BATCH DONE: ${batchRes.length} queries \u2502 ${data.total_elapsed}s total \u2550\u2550\u2550`, id: Date.now()+9991 });
+      setLogEntries(allEntries);
+      setLastTime(data.total_elapsed);
+
+      // Auto-expand first group
+      setExpandedGroups({ 0: true });
+
+      // Save each to history
+      batchRes.forEach(br => {
+        if (!br.error || br.data?.stages) saveToHistory(br.query, br.data);
+      });
+
+    } catch (e) {
+      addLog('t-err', `  \u2717 Batch request failed: ${e.message}`);
+      setBatchProgress(null);
+    } finally {
+      setLoading(false);
+    }
+  }, [batchQueries, loading, addLog, buildLogEntries, saveToHistory]);
+
+  const loadExamples = useCallback(() => {
+    setBatchText(EXAMPLE_QUERIES.join('\n'));
+  }, []);
+
+  const toggleGroup = useCallback((idx) => {
+    setExpandedGroups(prev => ({ ...prev, [idx]: !prev[idx] }));
+  }, []);
+
+  return (<>
+    {/* Header */}
+    <div className="hdr">
+      <div className="hdr-title">{'>'} COMPANY QUALIFIER_</div>
+      <div className="hdr-right">
+        <span className="hdr-stat">{status ? <>{status.companies} companies{status.llm_available ? <> | <span className="on">LLM: {status.llm_model}</span></> : <> | <span className="off">LLM: OFF</span></>}</> : '...'}</span>
+        {qCount > 0 && <span className="hdr-stat">Queries: {qCount}</span>}
+      </div>
+    </div>
+
+    {/* Warning banner */}
+    {showBanner && (
+      <div className="banner">
+        <div className="banner-body">
+          <div className="banner-title">No OpenAI API Key Detected</div>
+          <div className="banner-text">Set the <code>OPENAI_API_KEY</code> environment variable and restart the server to enable queries.</div>
+        </div>
+        <div className="banner-actions">
+          <button className="banner-btn banner-btn-demo" onClick={loadDemo}>TRY DEMO</button>
+          <button className="banner-btn banner-btn-dismiss" onClick={()=>setBannerDismissed(true)}>DISMISS</button>
+        </div>
+      </div>
+    )}
+
+    {/* Query bar */}
+    <div className="qbar">
+      <div className="mode-toggle">
+        <button className={`mode-btn ${!batchMode?'active':''}`} onClick={()=>setBatchMode(false)}>SINGLE</button>
+        <button className={`mode-btn ${batchMode?'active':''}`} onClick={()=>setBatchMode(true)}>BATCH</button>
+      </div>
+      {!batchMode ? (<>
+        <span className="qbar-prompt">$</span>
+        <input ref={inputRef} className="qbar-input" type="text" value={query} onChange={e=>setQuery(e.target.value)} onKeyDown={e=>{if(e.key==='Enter')runQuery()}} placeholder={noKey ? 'API key required — set OPENAI_API_KEY to enable queries' : 'Enter query... e.g. "Logistics companies in Germany"'} disabled={loading || noKey} autoFocus />
+        <button className="qbar-btn" onClick={runQuery} disabled={loading||!query.trim()||noKey}>
+          {loading ? <><span className="spinner"/>RUNNING</> : 'RUN'}
+        </button>
+      </>) : (<>
+        <textarea className="batch-textarea" rows={Math.min(6, Math.max(2, batchQueries.length+1))} value={batchText} onChange={e=>setBatchText(e.target.value)} placeholder={"One query per line:\nPublic software companies with more than 1,000 employees\nPharmaceutical companies in Switzerland\n..."} disabled={loading || noKey} />
+        <div style={{display:'flex',flexDirection:'column',gap:'4px',alignItems:'stretch'}}>
+          <button className="qbar-btn" onClick={runBatch} disabled={loading||batchQueries.length===0||noKey}>
+            {loading ? <><span className="spinner"/>RUNNING {batchProgress ? `${batchProgress.current}/${batchProgress.total}` : ''}</> : `QUALIFY ALL`}
+          </button>
+          <button className="batch-load-examples" onClick={loadExamples} disabled={loading}>LOAD 12 EXAMPLES</button>
+        </div>
+        {batchQueries.length > 0 && <span className="batch-info">{batchQueries.length} {batchQueries.length===1?'query':'queries'}</span>}
+      </>)}
+      <button className="qbar-clear" onClick={()=>{clearLog();setBatchResults([]);setBatchProgress(null);}} title="Clear log">CLEAR</button>
+    </div>
+
+    {/* Main */}
+    <div className="main">
+      {/* Pipeline log */}
+      <div className="panel">
+        <div className="panel-hdr">
+          <span>Pipeline Log</span>
+          <span style={{color:'var(--dim)',fontSize:'9px'}}>{logEntries.filter(e=>!e.component).length} lines</span>
+        </div>
+        <div className="panel-body">
+          {logEntries.length === 0 ? (
+            <div className="empty">Pipeline log will appear here.<br/>Enter a query to begin.</div>
+          ) : (
+            <div className="term">
+              {logEntries.map(e =>
+                e.component
+                  ? <div key={e.id}>{e.component}</div>
+                  : <div key={e.id} className={`t ${e.cls||''}`}>{e.content}</div>
+              )}
+              <div ref={logEnd} />
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Results */}
+      <div className="panel">
+        <div className="panel-hdr">
+          <span>Results {batchMode && batchResults.length > 0 ? `(${batchResults.length} queries)` : results.length > 0 ? `(${results.length})` : ''}</span>
+          {batchMode && batchResults.length > 0 && (
+            <span style={{fontSize:'9px',color:'var(--dim)'}}>
+              {batchResults.reduce((s,br) => s + (br.data?.results?.length||0), 0)} total companies
+            </span>
+          )}
+        </div>
+        <div className="panel-body">
+          {batchMode && batchResults.length > 0 ? (
+            /* Batch grouped results */
+            <div>
+              {batchResults.map((br, idx) => {
+                const rl = br.data?.results || [];
+                const isOpen = !!expandedGroups[idx];
+                return (
+                  <div key={idx} className="batch-group">
+                    <div className="batch-group-hdr" onClick={()=>toggleGroup(idx)}>
+                      <span className={`batch-group-arrow ${isOpen?'open':''}`}>▶</span>
+                      <span className="batch-group-query">{idx+1}. {br.query}</span>
+                      <div className="batch-group-meta">
+                        {br.error && !br.data?.stages ? (
+                          <span className="err">ERROR</span>
+                        ) : (<>
+                          <span className="count">{rl.length} results</span>
+                          {br.data?.elapsed && <span className="time">{br.data.elapsed}s</span>}
+                        </>)}
+                      </div>
+                    </div>
+                    <div className={`batch-group-body ${isOpen?'open':''}`}>
+                      {br.error && !br.data?.stages ? (
+                        <div style={{padding:'10px 12px',color:'var(--err)',fontSize:'11px'}}>{br.error}</div>
+                      ) : rl.length === 0 ? (
+                        <div style={{padding:'10px 12px',color:'var(--dim)',fontSize:'11px'}}>
+                          {br.data?.no_data ? (br.data.no_data_message || 'No matching companies.') : 'No results.'}
+                        </div>
+                      ) : (
+                        <table className="rtbl"><thead><tr><th>#</th><th>Score</th><th>Company</th><th>Stage</th><th>Location</th></tr></thead><tbody>
+                          {rl.map((r,i) => (
+                            <tr key={i} onClick={()=>setSelected(r)}>
+                              <td style={{color:'var(--dim)'}}>{i+1}</td>
+                              <td className={sc(r.score)}>{r.score.toFixed(3)}</td>
+                              <td className="cname">{r.name}</td>
+                              <td><span className={`stag stag-${r.stage}`}>{r.stage}</span></td>
+                              <td className="loc">{r.address||'—'}</td>
+                            </tr>
+                          ))}
+                        </tbody></table>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : noData ? (
+            <div className="empty" style={{color:'var(--err)', flexDirection:'column'}}>
+              <div style={{fontSize:'18px',marginBottom:'12px'}}>✗ NO MATCHING DATA</div>
+              <div style={{color:'var(--dim)',fontSize:'11px',maxWidth:'340px',lineHeight:'1.6',textAlign:'center'}}>{noData}</div>
+            </div>
+          ) : results.length === 0 ? (
+            <div className="empty">{loading ? <><span className="spinner"/>Processing...</> : <>Results will appear here.<br/>Click a row for details.</>}</div>
+          ) : (
+            <table className="rtbl"><thead><tr><th>#</th><th>Score</th><th>Company</th><th>Stage</th><th>Location</th></tr></thead><tbody>
+              {results.map((r,i) => (
+                <tr key={i} onClick={()=>setSelected(r)}>
+                  <td style={{color:'var(--dim)'}}>{i+1}</td>
+                  <td className={sc(r.score)}>{r.score.toFixed(3)}</td>
+                  <td className="cname">{r.name}</td>
+                  <td><span className={`stag stag-${r.stage}`}>{r.stage}</span></td>
+                  <td className="loc">{r.address||'—'}</td>
+                </tr>
+              ))}
+            </tbody></table>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* Footer */}
+    <div className="footer">
+      <span>Company Qualifier v1.0 — Multi-Stage Pipeline</span>
+      <span>{lastTime!=null && `Last: ${lastTime}s`}{status?.llm_available ? `  │  Model: ${status.llm_model}` : ''}</span>
+    </div>
+
+    {/* History Sidebar */}
+    {!sidebarOpen && (
+      <div className="sidebar-tab" onClick={()=>setSidebarOpen(true)}>
+        HISTORY {history.length > 0 && `${history.length}`}
+      </div>
+    )}
+    {sidebarOpen && <div className="sidebar-overlay" onClick={()=>setSidebarOpen(false)} />}
+    <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+      <div className="sidebar-hdr">
+        <span className="sidebar-title">QUERY HISTORY</span>
+        <button className="sidebar-close" onClick={()=>setSidebarOpen(false)}>&times;</button>
+      </div>
+      <div className="sidebar-body">
+        {history.length === 0 ? (
+          <div className="sidebar-empty">No queries yet.<br/>Run a query to populate history.</div>
+        ) : history.map(h => (
+          <div key={h.id} className="sidebar-item" onClick={()=>restoreFromHistory(h)}>
+            <div className="sidebar-item-q">{h.query}</div>
+            <div className="sidebar-item-meta">
+              <span>{new Date(h.timestamp).toLocaleTimeString()}</span>
+              <span className="accent">{h.resultCount} results</span>
+              <span>{h.elapsed}s</span>
+              {h.avgScore > 0 && <span>avg: {h.avgScore}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+      {history.length > 0 && (
+        <div className="sidebar-footer">
+          <button className="sidebar-clear" onClick={clearHistory}>CLEAR HISTORY</button>
+        </div>
+      )}
+    </div>
+
+    {selected && <DetailModal c={selected} onClose={()=>setSelected(null)} />}
+  </>);
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

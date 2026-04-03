@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables (contains API keys)
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
+
+# Embedding cache (auto-regenerated on first run)
+cache/embeddings_*.npy
+cache/embeddings_*.hash
+
+# Internal tools (not part of the submission)
+create-taxonomy.py
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
