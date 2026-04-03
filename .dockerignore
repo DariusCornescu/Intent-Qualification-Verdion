@@ -1,0 +1,36 @@
+.git
+.gitignore
+.env
+.env.example
+.vscode/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# Documentation and images (not needed at runtime)
+WRITEUP.md
+README.md
+ReadMe.md
+image.png
+image-1.png
+image-2.png
+image-3.png
+
+# Notebooks
+data/data_analysis.ipynb
+finetune_colab.ipynb
+
+# Test files
+tests/
+
+# Fine-tuning (not needed for main app)
+requirements-finetune.txt
+finetune.py
+training/
+
+# Embedding cache (auto-regenerated at startup)
+data/cache/
+
+# OS files
+.DS_Store
+Thumbs.db

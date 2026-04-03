@@ -31,11 +31,13 @@ Thumbs.db
 .pytest_cache/
 
 # Embedding cache (auto-regenerated on first run)
-cache/embeddings_*.npy
-cache/embeddings_*.hash
+data/cache/
 
 # Internal tools (not part of the submission)
 create-taxonomy.py
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
+
+# Training auto-logs (generated at runtime)
+training/stage0_pairs.jsonl

@@ -16,6 +16,7 @@ The system decomposes each query into structured filters and semantic signals, t
         <td><img src="image-3.png" width="400"/></td>
     </tr>
 </table>
+
 ---
 
 ## Architecture
@@ -74,10 +75,6 @@ Edit `.env` and add your key:
 ```text
 OPENAI_API_KEY=sk-your-key-here
 ```
-
-**Without API key:** the 12 example queries from `queries.json` work fully (served from pre-cached LLM responses). Custom queries will show a message asking for an API key.
-
-**With API key:** all queries work, including custom ones. Responses are cached automatically.
 
 #### 3. Run the web UI
 
